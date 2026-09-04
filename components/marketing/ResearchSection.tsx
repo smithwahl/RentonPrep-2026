@@ -1,27 +1,11 @@
-const cards = [
-  {
-    title: "Reading Instruction That Works",
-    accent: "var(--color-primary)",
-    body: "Literacy instruction starts with the foundational skills: phonics, decoding, and word recognition. From there it builds through fluency, vocabulary, and comprehension. Students don't just learn to read; they read to discover, think, and grow.",
-  },
-  {
-    title: "Mathematical Reasoning",
-    accent: "var(--color-blue-muted)",
-    body: "Students are expected to explain their thinking, not just arrive at the right answer. Math class involves discussion: showing how a problem was solved, trying alternative approaches, and building the confidence that comes from genuine understanding.",
-  },
-  {
-    title: "Character and Relational Skills",
-    accent: "var(--color-green-muted)",
-    body: "Students who understand themselves, manage conflict well, and work effectively with others carry those skills into every area of life. We treat character and relational development as core curriculum, not supplementary programming.",
-  },
-  {
-    title: "Outdoor & Experiential Learning",
-    accent: "var(--color-accent)",
-    body: "Students learn beyond the classroom through field trips, outdoor time, and hands-on projects built into the regular schedule. Getting out of the building and into the world isn't a reward for finishing work; it's part of how the work gets done.",
-  },
-];
+import type { ResearchGridSectionData } from "@/lib/cms/types";
 
-export function ResearchSection() {
+export function ResearchSection({
+  eyebrow,
+  heading,
+  intro,
+  cards,
+}: Omit<ResearchGridSectionData, "type">) {
   return (
     <section
       className="section section--surface"
@@ -30,13 +14,9 @@ export function ResearchSection() {
     >
       <div className="container">
         <div className="section-intro">
-          <span className="eyebrow eyebrow--muted">Academic Foundation</span>
-          <h2 id="research-heading">Grounded in What Works</h2>
-          <p>
-            Instruction here follows the evidence, not the trend cycle. We
-            build on what research consistently shows works, then adapt it for
-            the students we actually know.
-          </p>
+          <span className="eyebrow eyebrow--muted">{eyebrow}</span>
+          <h2 id="research-heading">{heading}</h2>
+          <p>{intro}</p>
         </div>
         <div className="research-grid">
           {cards.map((c) => (

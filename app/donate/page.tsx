@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-import { DonatePageContent } from "@/components/marketing/DonatePageContent";
+import { PageRenderer } from "@/components/cms/PageRenderer";
+import { getPageBySlug } from "@/lib/cms/pageService";
 
 export const metadata: Metadata = {
   title: "Donate",
@@ -13,10 +14,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function DonatePage() {
+export default async function DonatePage() {
+  const page = await getPageBySlug("donate");
+  if (!page) return null;
+
   return (
     <div className="marketing-root">
-      <DonatePageContent />
+      <PageRenderer sections={page.sections} />
     </div>
   );
 }

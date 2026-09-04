@@ -1,23 +1,24 @@
 import Link from "next/link";
 
-import { site } from "@/lib/site";
+import type { HiringSectionData } from "@/lib/cms/types";
 
-export function HiringSection() {
+export function HiringSection({
+  eyebrow,
+  heading,
+  body,
+  buttonLabel,
+  buttonHref,
+}: Omit<HiringSectionData, "type">) {
   return (
     <section className="section section--surface" aria-labelledby="hiring-heading">
       <div className="container">
         <div className="section-intro section-intro--center">
-          <span className="eyebrow eyebrow--muted">Careers</span>
-          <h2 id="hiring-heading">Join Our Work</h2>
-          <p>
-            Renton Prep is built around a master–apprentice model of learning:
-            educators and students working alongside each other toward genuine
-            understanding. We welcome inquiries from educators, interns, and
-            contributors who share our mission and want to be part of that work.
-          </p>
+          <span className="eyebrow eyebrow--muted">{eyebrow}</span>
+          <h2 id="hiring-heading">{heading}</h2>
+          <p>{body}</p>
           <div className="btn-group" style={{ justifyContent: "center" }}>
-            <Link href={site.urls.careers} className="btn btn-primary">
-              View Careers
+            <Link href={buttonHref} className="btn btn-primary">
+              {buttonLabel}
             </Link>
           </div>
         </div>

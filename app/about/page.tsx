@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-import { AboutSchoolContent } from "@/components/marketing/AboutSchoolContent";
+import { PageRenderer } from "@/components/cms/PageRenderer";
+import { getPageBySlug } from "@/lib/cms/pageService";
 
 export const metadata: Metadata = {
   title: "About Us: Our Story",
@@ -13,10 +14,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const page = await getPageBySlug("about");
+  if (!page) return null;
+
   return (
     <div className="marketing-root">
-      <AboutSchoolContent />
+      <PageRenderer sections={page.sections} />
     </div>
   );
 }

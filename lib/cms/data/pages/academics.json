@@ -1,0 +1,33 @@
+{
+  "title": "Academics",
+  "slug": "academics",
+  "pageType": "hub",
+  "status": "published",
+  "seo": {
+    "seoTitle": "Academics",
+    "seoDescription": "Christ-centered, research-informed learning across K–12 on one campus.",
+    "noindex": false
+  },
+  "sections": [
+    {
+      "type": "academicsPage",
+      "heading": "Academics",
+      "intro": "Christ-centered, research-informed learning across K–12 on one campus. Use the links below to go deeper on technology and enrollment.",
+      "primaryButton": { "label": "The Genesis Project", "href": "/about/genesis" },
+      "secondaryButton": { "label": "Research on the home page", "href": "/#research" },
+      "technologyHeading": "Technology",
+      "technologyProse": [
+        "Technology is part of how we teach and learn—not an add-on. The Genesis Project describes how Renton Prep approaches AI and digital tools with students and families."
+      ],
+      "technologyLinks": [
+        { "label": "Read about the Genesis Project", "href": "/about/genesis" },
+        { "label": "Genesis section on the home page", "href": "/#genesis" }
+      ],
+      "elementaryHeading": "Elementary",
+      "elementaryProse": [
+        "Elementary students are part of the full K–12 program at our Renton campus. For grade levels, enrollment steps, and tuition, start with admissions."
+      ],
+      "elementaryButton": { "label": "Admissions", "href": "/admissions" }
+    }
+  ]
+}

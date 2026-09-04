@@ -1,0 +1,11 @@
+[
+  { "id": "nav-story", "title": "Our Story", "linkType": "internalPage", "slug": "about", "order": 1, "parentId": null },
+  { "id": "nav-story-genesis", "title": "The Genesis Project", "linkType": "internalPage", "slug": "about/genesis", "order": 1, "parentId": "nav-story" },
+  { "id": "nav-story-awards", "title": "Awards & Recognition", "linkType": "internalPage", "slug": "awards", "order": 2, "parentId": "nav-story" },
+  { "id": "nav-mission", "title": "Mission", "linkType": "anchor", "slug": "/", "anchor": "mission", "order": 2, "parentId": null },
+  { "id": "nav-research", "title": "Research", "linkType": "anchor", "slug": "/", "anchor": "research", "order": 3, "parentId": null },
+  { "id": "nav-genesis", "title": "The Genesis Project", "linkType": "anchor", "slug": "/", "anchor": "genesis", "order": 4, "parentId": null },
+  { "id": "nav-admissions", "title": "Admissions", "linkType": "anchor", "slug": "/", "anchor": "next-steps", "order": 5, "parentId": null },
+  { "id": "nav-community", "title": "Community", "linkType": "anchor", "slug": "/", "anchor": "community", "order": 6, "parentId": null },
+  { "id": "nav-faq", "title": "FAQ", "linkType": "anchor", "slug": "/", "anchor": "faq", "order": 7, "parentId": null }
+]

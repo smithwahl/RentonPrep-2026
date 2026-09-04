@@ -1,46 +1,23 @@
-import fs from "node:fs";
-import path from "node:path";
-
 import Image from "next/image";
 
 import { MarketingLink } from "@/components/marketing/MarketingLink";
-import { site } from "@/lib/site";
+import type { CommunitySectionData } from "@/lib/cms/types";
 
 /**
- * Four-photo grid (2×2 desktop, stack on small screens).
- * Files live in /public/ — keep extensions in sync with on-disk assets.
+ * CMS-driven photo list — no more fs.existsSync file-gate. The old version
+ * silently rendered nothing whenever an asset filename drifted from the hardcoded
+ * list (see CMS-MIGRATION-PLAN.md §12/§20); a CMS-managed list can't drift that way
+ * since editors pick real uploaded assets.
  */
-const photos = [
-  {
-    src: "/community-1.jpeg",
-    alt: "Teacher reading aloud to elementary students gathered on the classroom floor",
-    position: "center 35%",
-  },
-  {
-    src: "/community-2.JPG",
-    alt: "Students crossing a suspension bridge on a Renton Prep outdoor field trip",
-    position: "center 25%",
-  },
-  {
-    src: "/community-3.jpg",
-    alt: "Teacher leading a morning lesson with students seated on the floor",
-    position: "center 30%",
-  },
-  {
-    src: "/community-4.jpg",
-    alt: "Students watching a classroom presentation on the large screen",
-    position: "center center",
-  },
-];
-
-function photosExist(): boolean {
-  return photos.every((p) =>
-    fs.existsSync(path.join(process.cwd(), "public", p.src)),
-  );
-}
-
-export function CommunitySection() {
-  if (!photosExist()) return null;
+export function CommunitySection({
+  eyebrow,
+  heading,
+  intro,
+  photos,
+  ctaLabel,
+  ctaHref,
+}: Omit<CommunitySectionData, "type">) {
+  if (photos.length === 0) return null;
 
   return (
     <section
@@ -50,12 +27,9 @@ export function CommunitySection() {
     >
       <div className="container">
         <div className="section-intro section-intro--center">
-          <span className="eyebrow eyebrow--muted">Our Community</span>
-          <h2 id="community-heading">Life at Renton Prep</h2>
-          <p>
-            A glimpse into our classrooms, community events, and the everyday
-            moments that make Renton Prep home.
-          </p>
+          <span className="eyebrow eyebrow--muted">{eyebrow}</span>
+          <h2 id="community-heading">{heading}</h2>
+          <p>{intro}</p>
         </div>
 
         <div className="community-grid" role="group" aria-label="Community photo grid">
@@ -73,8 +47,8 @@ export function CommunitySection() {
         </div>
 
         <div style={{ textAlign: "center", marginTop: "var(--space-4)" }}>
-          <MarketingLink href={site.urls.instagram} className="btn btn-secondary">
-            Follow @rentonprep on Instagram
+          <MarketingLink href={ctaHref} className="btn btn-secondary">
+            {ctaLabel}
           </MarketingLink>
         </div>
       </div>

@@ -1,0 +1,36 @@
+{
+  "name": "Renton Prep Christian School",
+  "legalName": "Renton Preparatory Christian School",
+  "tagline": "A Premier Microsoft Showcase School",
+  "address": {
+    "line1": "200 Mill Ave S Ste 110",
+    "line2": "Renton, WA 98057",
+    "mapQuery": "200 Mill Ave S Ste 110, Renton, WA 98057"
+  },
+  "addressStructured": {
+    "streetAddress": "200 Mill Ave S Ste 110",
+    "addressLocality": "Renton",
+    "addressRegion": "WA",
+    "postalCode": "98057",
+    "addressCountry": "US"
+  },
+  "phone": {
+    "display": "(206) 723-5526",
+    "tel": "+12067235526"
+  },
+  "socials": {
+    "instagram": "https://www.instagram.com/rentonprep/"
+  },
+  "applyUrl": "https://accounts.renweb.com/password/create?clientId=admissionsParentCode&district=RPCS-WA&memberId=481",
+  "contactUrl": "/request-information",
+  "microcopy": {
+    "noCommitment": "No commitment. Takes about 2 minutes.",
+    "noCommitmentFull": "No commitment. Takes about 2 minutes. We will guide you through each step."
+  },
+  "defaultSeoDescription": "A Christ-centered, accredited K–12 school in Renton, WA. Washington's first Cognia STEM-certified K–12, a Microsoft Showcase School, and home of the Genesis Project.",
+  "footerBrandDescription": "A fully accredited, Christ-centered K–12 school in Renton, WA. Small by design, nationally recognized, and focused on preparing students for college, career, and meaningful contribution.",
+  "schwabeLink": {
+    "label": "In memory of Henry and Edith Schwabe · Our history",
+    "href": "/about#moments"
+  }
+}

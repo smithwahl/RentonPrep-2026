@@ -1,0 +1,6 @@
+[
+  { "id": "fac-academics", "title": "Academics", "linkType": "internalPage", "slug": "academics", "order": 1, "parentId": null },
+  { "id": "fac-genesis", "title": "The Genesis Project", "linkType": "internalPage", "slug": "about/genesis", "order": 2, "parentId": null },
+  { "id": "fac-contact", "title": "Request Information", "linkType": "internalPage", "slug": "request-information", "order": 3, "parentId": null },
+  { "id": "fac-instagram", "title": "Instagram", "linkType": "externalUrl", "url": "https://www.instagram.com/rentonprep/", "order": 4, "parentId": null, "openInNewTab": true }
+]

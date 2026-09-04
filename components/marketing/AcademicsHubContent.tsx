@@ -1,31 +1,33 @@
-import Link from "next/link";
-
 import { MarketingLink } from "@/components/marketing/MarketingLink";
 import { MarketingShell } from "@/components/marketing/MarketingShell";
-import { site } from "@/lib/site";
+import type { AcademicsPageData } from "@/lib/cms/types";
 
-export function AcademicsHubContent() {
+export function AcademicsHubContent({
+  heading,
+  intro,
+  primaryButton,
+  secondaryButton,
+  technologyHeading,
+  technologyProse,
+  technologyLinks,
+  elementaryHeading,
+  elementaryProse,
+  elementaryButton,
+}: Omit<AcademicsPageData, "type">) {
   return (
     <MarketingShell>
       <section className="section section--surface">
         <div className="container">
           <div className="hub-section">
-            <h1>Academics</h1>
-            <p className="hub-intro">
-              Christ-centered, research-informed learning across K–12 on one
-              campus. Use the links below to go deeper on technology and
-              enrollment.
-            </p>
+            <h1>{heading}</h1>
+            <p className="hub-intro">{intro}</p>
             <div className="btn-group">
-              <MarketingLink
-                href={site.urls.genesisProject}
-                className="btn btn-primary"
-              >
-                The Genesis Project
+              <MarketingLink href={primaryButton.href} className="btn btn-primary">
+                {primaryButton.label}
               </MarketingLink>
-              <Link href="/#research" className="btn btn-secondary">
-                Research on the home page
-              </Link>
+              <MarketingLink href={secondaryButton.href} className="btn btn-secondary">
+                {secondaryButton.label}
+              </MarketingLink>
             </div>
           </div>
         </div>
@@ -34,19 +36,18 @@ export function AcademicsHubContent() {
       <section className="section section--alt" id="technology">
         <div className="container">
           <div className="hub-section">
-            <h2>Technology</h2>
+            <h2>{technologyHeading}</h2>
             <div className="hub-prose">
+              {technologyProse.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
               <p>
-                Technology is part of how we teach and learn—not an add-on. The
-                Genesis Project describes how Renton Prep approaches AI and
-                digital tools with students and families.
-              </p>
-              <p>
-                <MarketingLink href={site.urls.genesisProject}>
-                  Read about the Genesis Project
-                </MarketingLink>
-                {" · "}
-                <Link href="/#genesis">Genesis section on the home page</Link>
+                {technologyLinks.map((link, i) => (
+                  <span key={link.label}>
+                    {i > 0 ? " · " : null}
+                    <MarketingLink href={link.href}>{link.label}</MarketingLink>
+                  </span>
+                ))}
               </p>
             </div>
           </div>
@@ -56,17 +57,15 @@ export function AcademicsHubContent() {
       <section className="section section--surface" id="elementary">
         <div className="container">
           <div className="hub-section">
-            <h2>Elementary</h2>
+            <h2>{elementaryHeading}</h2>
             <div className="hub-prose">
+              {elementaryProse.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
               <p>
-                Elementary students are part of the full K–12 program at our
-                Renton campus. For grade levels, enrollment steps, and tuition,
-                start with admissions.
-              </p>
-              <p>
-                <Link href={site.urls.admissions} className="btn btn-secondary">
-                  Admissions
-                </Link>
+                <MarketingLink href={elementaryButton.href} className="btn btn-secondary">
+                  {elementaryButton.label}
+                </MarketingLink>
               </p>
             </div>
           </div>

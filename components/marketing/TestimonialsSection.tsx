@@ -1,22 +1,11 @@
-const quotes = [
-  {
-    quote:
-      "Renton Prep changed how my daughter sees herself as a learner. She went from struggling to thriving, and the teachers knew exactly why and what she needed.",
-    attr: "Parent of 3rd Grader · Enrolled Family",
-  },
-  {
-    quote:
-      "The combination of strong academics and genuine faith integration is rare. My kids are being challenged intellectually and shaped spiritually at the same time.",
-    attr: "Parent of Two Students · Enrolled Family",
-  },
-  {
-    quote:
-      "The Genesis Project gave my son a way to talk about AI that was grounded and thoughtful. He is not afraid of the technology. He knows how to use it wisely.",
-    attr: "Parent of 5th Grader · Enrolled Family",
-  },
-];
+import type { TestimonialsSectionData } from "@/lib/cms/types";
 
-export function TestimonialsSection() {
+export function TestimonialsSection({
+  eyebrow,
+  heading,
+  intro,
+  items,
+}: Omit<TestimonialsSectionData, "type">) {
   return (
     <section
       className="section section--alt"
@@ -25,15 +14,15 @@ export function TestimonialsSection() {
     >
       <div className="container">
         <div className="section-intro section-intro--center">
-          <span className="eyebrow eyebrow--muted">Family Voices</span>
-          <h2 id="testimonials-heading">What Our Families Say</h2>
-          <p>Words from parents whose children call Renton Prep home.</p>
+          <span className="eyebrow eyebrow--muted">{eyebrow}</span>
+          <h2 id="testimonials-heading">{heading}</h2>
+          <p>{intro}</p>
         </div>
         <div className="testimonials-grid">
-          {quotes.map((q, i) => (
+          {items.map((q, i) => (
             <figure key={i} className="testimonial-card">
               <blockquote className="testimonial-quote">{q.quote}</blockquote>
-              <figcaption className="testimonial-attr">{q.attr}</figcaption>
+              <figcaption className="testimonial-attr">{q.attribution}</figcaption>
             </figure>
           ))}
         </div>

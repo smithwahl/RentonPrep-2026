@@ -21,6 +21,7 @@ type MarketingLinkProps = {
   style?: CSSProperties;
   children: ReactNode;
   onClick?: () => void;
+  "aria-current"?: "page" | "step" | "location" | "date" | "time" | "true" | "false";
 };
 
 /** Internal routes use Next Link; http(s) uses a regular anchor (e.g. Instagram, external apply portal). */
@@ -30,6 +31,7 @@ export function MarketingLink({
   style,
   children,
   onClick,
+  "aria-current": ariaCurrent,
 }: MarketingLinkProps) {
   const safeHref = sanitizeHref(href);
   if (isExternalHref(safeHref)) {
@@ -41,6 +43,7 @@ export function MarketingLink({
         target="_blank"
         rel="noopener noreferrer"
         onClick={onClick}
+        aria-current={ariaCurrent}
       >
         {children}
       </a>
@@ -52,6 +55,7 @@ export function MarketingLink({
       className={className}
       style={style}
       onClick={onClick}
+      aria-current={ariaCurrent}
     >
       {children}
     </Link>

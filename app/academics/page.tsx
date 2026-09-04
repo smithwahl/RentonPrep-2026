@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-import { AcademicsHubContent } from "@/components/marketing/AcademicsHubContent";
+import { PageRenderer } from "@/components/cms/PageRenderer";
+import { getPageBySlug } from "@/lib/cms/pageService";
 
 export const metadata: Metadata = {
   title: "Academics",
@@ -15,10 +16,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AcademicsPage() {
+export default async function AcademicsPage() {
+  const page = await getPageBySlug("academics");
+  if (!page) return null;
+
   return (
     <div className="marketing-root">
-      <AcademicsHubContent />
+      <PageRenderer sections={page.sections} />
     </div>
   );
 }

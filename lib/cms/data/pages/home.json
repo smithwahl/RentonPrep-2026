@@ -1,0 +1,182 @@
+{
+  "title": "Home",
+  "slug": "/",
+  "pageType": "home",
+  "status": "published",
+  "seo": {
+    "seoTitle": "Renton Prep a Microsoft Showcase School",
+    "seoDescription": "A Christ-centered, accredited K–12 school in Renton, WA. Washington's first Cognia STEM-certified K–12, a Microsoft Showcase School, and home of the Genesis Project.",
+    "noindex": false
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "heading": "Small Enough to Know Every Child.\nStrong Enough to Prepare Them Well.",
+      "description": "Renton Prep is a Christ-centered, accredited K–12 school in Renton, WA, where students are known individually, challenged rigorously, and formed in faith. Recognized as Washington's first Cognia STEM–certified K–12 and a Microsoft Showcase School.",
+      "backgroundImage": "/hero-1.jpeg",
+      "primaryButton": { "label": "Request Information", "href": "/request-information" },
+      "secondaryButton": { "label": "Apply Now", "href": "{{settings.applyUrl}}" },
+      "microcopy": "No commitment. Takes about 2 minutes. We will guide you through each step."
+    },
+    {
+      "type": "metrics",
+      "eyebrow": "Recognition",
+      "heading": "First Cognia STEM-Accredited K–12 School in Washington",
+      "body": "Renton Prep combines accredited academics, STEM distinction, and a thoughtful K–12 learning journey designed to help students grow with purpose, confidence, and curiosity.",
+      "points": [
+        "Cognia-accredited K–12 school",
+        "STEM-accredited program in Washington",
+        "The Genesis Project for K–5 students"
+      ],
+      "badges": [
+        { "image": "/cognia-accredited-badge.png", "alt": "Cognia Accredited: NCA CASI, NWAC, SACS CASI", "label": "Cognia Accredited", "width": 140, "height": 114 },
+        { "image": "/microsoft-showcase-badge.jpg", "alt": "Microsoft Showcase School", "label": "Microsoft Showcase School", "width": 100, "height": 100 }
+      ]
+    },
+    {
+      "type": "whyChoose",
+      "eyebrow": "Recognition",
+      "heading": "What Families Come Here For",
+      "intro": "A small, fully accredited Christian school where students are known by name, challenged academically, and formed in faith. Built for families who want both genuine care and serious scholarship.",
+      "items": [
+        "Christ-centered from the classroom to the culture. Faith shapes how we teach, how we relate, and how we learn",
+        "Internationally and state accredited, held to rigorous academic standards across K–12",
+        "Washington's first Cognia STEM–certified K–12 school",
+        "Personalized, research-informed learning in a school small enough to know every student"
+      ],
+      "ctaLabel": "Awards and Recognition",
+      "ctaHref": "/awards"
+    },
+    {
+      "type": "missionVisionAction",
+      "eyebrow": "Our Mission",
+      "heading": "Mission, Vision, and Action",
+      "intro": "The official statements that guide Renton Prep Christian School.",
+      "aboutHref": "/about",
+      "cards": [
+        {
+          "number": "01: Mission",
+          "title": "Our Mission",
+          "summary": "To create a community inspired by Jesus Christ's teachings, where learners develop their voice, embrace curiosity, learn from failure, and make meaningful contributions, supported by technology.",
+          "prose": [
+            "At Renton Prep, educators and students are both considered learners, uniquely positioned to bring hope to a hurting world. We follow the example of Jesus as an effective teacher who asked, “Do you hear what these children are saying?” (Matthew 21:16). We follow that example by listening carefully, inviting questions, and engaging multiple perspectives.",
+            "Our mission calls learners to practice critical thinking and problem‑solving through productive struggle, both individually and collaboratively. In a rapidly changing world, we view challenge and uncertainty not as obstacles to avoid, but as essential opportunities to innovate and grow.",
+            "We are committed to forming learners who approach relationships, work, and daily life with discernment, resilience, responsibility, and purpose."
+          ]
+        },
+        {
+          "number": "02: Vision",
+          "title": "Our Vision",
+          "summary": "To inspire a passion for teaching, learning, and critical thinking, shaping responsible citizens who share hope and build a legacy of wisdom and compassion together.",
+          "prose": [
+            "As technology and society continue to evolve, our vision remains anchored in our enduring mission and values, while thoughtfully adapting emerging skills and human traits that remain relevant in a continually changing world.",
+            "We seek to build a legacy shaped by the God-given talent, insight, and voice of students, educators, and collaborators, by cultivating strong and nuanced thinking skills, with the grit, wisdom, and flexibility required to move ideas into action."
+          ]
+        },
+        {
+          "number": "03: Action",
+          "title": "Our Action",
+          "summary": "We advance our mission and vision by inspiring curiosity, resilience, and learning from failure while cultivating learners' wisdom and abilities to contribute meaningfully in an ever‑changing, complex world.",
+          "prose": [
+            "A technology‑enabled education means more than incorporating modern tools and secure systems. It requires thoughtful learning design. As technology advances, our practices adapt. Our values remain constant.",
+            "All Genesis Project–related action remains aligned with Renton Prep's mission, vision, and beliefs while allowing approved translation for secular or interorganizational applications."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "featureGrid",
+      "eyebrow": "Why Renton Prep",
+      "heading": "What Sets Us Apart",
+      "intro": "Rigorous academics, a Christ-centered culture, and a school community small enough that every teacher knows every student, K through 12, in the same building.",
+      "items": [
+        { "title": "Every Child Is Known", "body": "Class sizes stay small on purpose. Teachers follow each student's learning patterns over time, knowing when to push harder, when to slow down, and when a different approach will finally unlock understanding." },
+        { "title": "Faith Woven Throughout", "body": "Scripture and the example of Christ shape how we frame every subject, from how we interpret history to how we resolve conflict in the hallway. Faith isn't a chapel add-on; it is the operating culture of the school." },
+        { "title": "Research-Backed Methods", "body": "Instruction is built on methods with documented results: spaced practice, frequent low-stakes assessment, and project-based learning that connects classroom skills to real problems. What and how we teach is continuously revised against current evidence." },
+        { "title": "Technology as a Learning Tool", "body": "Technology, including AI, is a means to stronger thinking, not a substitute for it. Students develop the discernment to know when and how to use these tools well, building habits that serve them long after the tools themselves change." },
+        { "title": "Whole-Child Development", "body": "Academic challenge, character formation, physical health, and creative expression are all treated as essential, not as extras competing for time. A student taught only facts is not fully prepared." },
+        { "title": "Small School, Strong Community", "body": "At this size, parents know teachers by name, and teachers know parents. Families join a school where involvement is natural, communication is direct, and no decision about your child is made without you in the conversation." }
+      ]
+    },
+    {
+      "type": "genesisTeaser",
+      "eyebrow": "The Genesis Project",
+      "heading": "Learning to Lead\nthe Tool",
+      "description": "A K–5 curriculum rooted in Renton Prep's mission, forming elementary-age learners who think critically, ask good questions, and understand what the tools they use can and cannot do.",
+      "items": [
+        { "title": "Critical Thinking First", "body": "Students learn to question AI outputs, verify sources, and apply their own reasoning, so they lead the tool rather than follow it." },
+        { "title": "Age-Appropriate Exposure", "body": "Each grade introduces concepts at the right developmental moment, building on prior learning so understanding deepens naturally, K through 5." },
+        { "title": "Ethical Frameworks", "body": "From the earliest grades, students explore questions of responsibility, authorship, and impact, grounded in Christian ethics and human dignity." }
+      ],
+      "ctaLabel": "Learn more about the Genesis Project",
+      "ctaHref": "/about/genesis"
+    },
+    {
+      "type": "researchGrid",
+      "eyebrow": "Academic Foundation",
+      "heading": "Grounded in What Works",
+      "intro": "Instruction here follows the evidence, not the trend cycle. We build on what research consistently shows works, then adapt it for the students we actually know.",
+      "cards": [
+        { "title": "Reading Instruction That Works", "accent": "var(--color-primary)", "body": "Literacy instruction starts with the foundational skills: phonics, decoding, and word recognition. From there it builds through fluency, vocabulary, and comprehension. Students don't just learn to read; they read to discover, think, and grow." },
+        { "title": "Mathematical Reasoning", "accent": "var(--color-blue-muted)", "body": "Students are expected to explain their thinking, not just arrive at the right answer. Math class involves discussion: showing how a problem was solved, trying alternative approaches, and building the confidence that comes from genuine understanding." },
+        { "title": "Character and Relational Skills", "accent": "var(--color-green-muted)", "body": "Students who understand themselves, manage conflict well, and work effectively with others carry those skills into every area of life. We treat character and relational development as core curriculum, not supplementary programming." },
+        { "title": "Outdoor & Experiential Learning", "accent": "var(--color-accent)", "body": "Students learn beyond the classroom through field trips, outdoor time, and hands-on projects built into the regular schedule. Getting out of the building and into the world isn't a reward for finishing work; it's part of how the work gets done." }
+      ]
+    },
+    {
+      "type": "testimonials",
+      "eyebrow": "Family Voices",
+      "heading": "What Our Families Say",
+      "intro": "Words from parents whose children call Renton Prep home.",
+      "items": [
+        { "quote": "Renton Prep changed how my daughter sees herself as a learner. She went from struggling to thriving, and the teachers knew exactly why and what she needed.", "attribution": "Parent of 3rd Grader · Enrolled Family" },
+        { "quote": "The combination of strong academics and genuine faith integration is rare. My kids are being challenged intellectually and shaped spiritually at the same time.", "attribution": "Parent of Two Students · Enrolled Family" },
+        { "quote": "The Genesis Project gave my son a way to talk about AI that was grounded and thoughtful. He is not afraid of the technology. He knows how to use it wisely.", "attribution": "Parent of 5th Grader · Enrolled Family" }
+      ]
+    },
+    {
+      "type": "cta",
+      "heading": "Ready to See Renton Prep for Yourself?",
+      "body": "Tour our campus, meet our teachers, and find out if Renton Prep is the right fit for your family. Request Information or start an application from here.",
+      "primaryButton": { "label": "Request Information", "href": "/request-information" },
+      "secondaryButton": { "label": "Apply Now", "href": "{{settings.applyUrl}}" },
+      "microcopy": "No commitment. Takes about 2 minutes. We will guide you through each step.",
+      "options": [
+        { "title": "Schedule a Campus Tour", "body": "Connect through our admissions team to plan a visit at our Renton campus.", "buttonLabel": "Request Information", "buttonHref": "/request-information" },
+        { "title": "Start an Application", "body": "Our admissions process is clear, welcoming, and family-centered from the first step.", "buttonLabel": "Apply Now", "buttonHref": "{{settings.applyUrl}}" },
+        { "title": "Call Admissions", "body": "Questions about curriculum, tuition, or fit? Reach us directly at the number below.", "buttonLabel": "(206) 723-5526", "buttonHref": "tel:+12067235526" }
+      ]
+    },
+    {
+      "type": "community",
+      "eyebrow": "Our Community",
+      "heading": "Life at Renton Prep",
+      "intro": "A glimpse into our classrooms, community events, and the everyday moments that make Renton Prep home.",
+      "photos": [
+        { "src": "/community-1.jpeg", "alt": "Teacher reading aloud to elementary students gathered on the classroom floor", "position": "center 35%" },
+        { "src": "/community-2.JPG", "alt": "Students crossing a suspension bridge on a Renton Prep outdoor field trip", "position": "center 25%" },
+        { "src": "/community-3.jpg", "alt": "Teacher leading a morning lesson with students seated on the floor", "position": "center 30%" },
+        { "src": "/community-4.jpg", "alt": "Students watching a classroom presentation on the large screen", "position": "center center" }
+      ],
+      "ctaLabel": "Follow @rentonprep on Instagram",
+      "ctaHref": "https://www.instagram.com/rentonprep/"
+    },
+    { "type": "faq" },
+    {
+      "type": "heartAndMind",
+      "eyebrow": "Our School's Heart and Mind",
+      "heading": "Relational teaching, anchored in truth",
+      "body": "Our teaching approach is relational and affirms students' innate abilities. With love that comes from God, we use technological advances alongside biblical principles so students experience balance in heart and mind, and learn to write their own success story.",
+      "linkLabel": "Why families choose Renton Prep",
+      "linkHref": "/#choose-heading"
+    },
+    {
+      "type": "hiring",
+      "eyebrow": "Careers",
+      "heading": "Join Our Work",
+      "body": "Renton Prep is built around a master–apprentice model of learning: educators and students working alongside each other toward genuine understanding. We welcome inquiries from educators, interns, and contributors who share our mission and want to be part of that work.",
+      "buttonLabel": "View Careers",
+      "buttonHref": "/careers"
+    }
+  ]
+}

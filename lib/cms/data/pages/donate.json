@@ -1,0 +1,21 @@
+{
+  "title": "Donate",
+  "slug": "donate",
+  "pageType": "standard",
+  "status": "published",
+  "seo": {
+    "seoTitle": "Donate",
+    "seoDescription": "Support Renton Preparatory Christian School — contact the school to learn how to give.",
+    "noindex": false
+  },
+  "sections": [
+    {
+      "type": "donatePage",
+      "eyebrow": "Support",
+      "heading": "Donate",
+      "body": "To learn about supporting {{settings.legalName}}, please contact the school directly. We will connect you with the right person on our team.",
+      "phoneButton": { "label": "Call {{settings.phone.display}}", "href": "tel:{{settings.phone.tel}}" },
+      "ctaButton": { "label": "Request information", "href": "/request-information" }
+    }
+  ]
+}

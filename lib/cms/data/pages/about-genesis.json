@@ -1,0 +1,149 @@
+{
+  "title": "The Genesis Project",
+  "slug": "about/genesis",
+  "pageType": "standard",
+  "status": "published",
+  "seo": {
+    "seoTitle": "The Genesis Project at Renton Prep",
+    "seoDescription": "A thoughtful, research-informed approach to learning, innovation, and human flourishing at Renton Prep.",
+    "noindex": false
+  },
+  "sections": [
+    {
+      "type": "genesisPage",
+      "eyebrow": "The Genesis Project",
+      "heading": "The Genesis Project at Renton Prep",
+      "intro": "A Thoughtful, Research-Informed Approach to Learning, Innovation, and Human Flourishing",
+      "heroProse": [
+        "At Renton Prep, we believe schools should prepare students not only for academic success, but also for lives of wisdom, purpose, and service. The Genesis Project reflects that commitment.",
+        "The Genesis Project is Renton Prep's long-term learning and research initiative focused on how students grow, how meaningful learning happens, and how emerging technologies, including artificial intelligence, can be introduced with care, responsibility, and clear educational purpose.",
+        "This is not innovation for its own sake. It is a thoughtful, deeply human approach to education, grounded in strong relationships, academic rigor, Christian faith, and careful stewardship."
+      ],
+      "blocks": [
+        {
+          "id": "why",
+          "heading": "Why the Genesis Project Matters",
+          "content": [
+            { "kind": "p", "text": "In recent years, many schools have rushed to adopt new technologies without clear guardrails, developmental considerations, or a deeper educational vision. At the same time, research has raised important questions about accountability, evidence, and long-term outcomes in newer school models." },
+            { "kind": "p", "text": "Renton Prep has taken a different path." },
+            { "kind": "p", "text": "The Genesis Project was built to ensure that innovation serves students well, strengthens trust, and supports deep learning rather than distracting from it. Our aim is not simply to use new tools, but to ask better questions:" },
+            { "kind": "list", "items": [
+              "What helps students think deeply and grow wisely?",
+              "How do we preserve human relationships at the center of learning?",
+              "How do we prepare students for a changing world without compromising childhood, character, or faith?",
+              "How can a small school remain agile while also being rigorous, accountable, and academically strong?"
+            ] },
+            { "kind": "p", "text": "These are not questions we began asking in response to public trends. They have already been central to our work." }
+          ]
+        },
+        {
+          "id": "small",
+          "heading": "Small by Design, Strong by Structure",
+          "content": [
+            { "kind": "p", "text": "Renton Prep offers the close relationships and personalized learning many families value in small-school environments, while also maintaining the structure and accountability families expect from a strong academic institution." },
+            { "kind": "p", "text": "We are:" },
+            { "kind": "list", "items": [
+              "Internationally and state accredited",
+              "State approved",
+              "Academically rigorous",
+              "Relational and student-centered",
+              "Committed to measurable growth and long-term outcomes"
+            ] },
+            { "kind": "p", "text": "Our size gives us flexibility. Our standards give families confidence." },
+            { "kind": "p", "text": "That combination is one of the things that makes Renton Prep distinct." }
+          ]
+        },
+        {
+          "id": "personalized",
+          "heading": "Personalized Learning with Purpose",
+          "content": [
+            { "kind": "p", "text": "Every student is different." },
+            { "kind": "p", "text": "Some are ready to move ahead quickly. Others benefit from more time, support, and repetition. We believe strong schools make room for both." },
+            { "kind": "p", "text": "At Renton Prep, personalized learning does not mean lowering expectations. It means knowing students well enough to challenge them appropriately, support them intentionally, and help them develop confidence, resilience, and ownership of their learning." },
+            { "kind": "p", "text": "We value productive struggle. We believe growth often comes through challenge. And we work to create an environment where students are both supported and stretched." }
+          ]
+        },
+        {
+          "id": "innovation",
+          "heading": "Responsible Innovation, Not Trend-Chasing",
+          "content": [
+            { "kind": "p", "text": "The Genesis Project guides how Renton Prep evaluates and introduces emerging technologies, including artificial intelligence." },
+            { "kind": "p", "text": "We do not believe schools should adopt technology simply because it is new, popular, or marketable. We believe new tools should be used only when they genuinely strengthen learning, and only when they are introduced with maturity, adult guidance, and clear moral and educational purpose." },
+            { "kind": "p", "text": "That means we ask careful questions before implementation:" },
+            { "kind": "list", "items": [
+              "Is this age-appropriate?",
+              "Does this support deep thinking rather than replace it?",
+              "Does this strengthen learning or create dependence?",
+              "Does this preserve trust, responsibility, and human connection?",
+              "Is this aligned with our values and our mission?"
+            ] },
+            { "kind": "p", "text": "Technology should serve students. It should never displace the relationships, judgment, discipline, and reflection that matter most." }
+          ]
+        },
+        {
+          "id": "academics",
+          "heading": "Academic Strength and Human Formation",
+          "content": [
+            { "kind": "p", "text": "Renton Prep is committed to strong academic outcomes, but we believe education must reach beyond performance alone." },
+            { "kind": "p", "text": "Our goal is to help students become thoughtful, capable, grounded young people who can read carefully, think critically, communicate clearly, and live with integrity." },
+            { "kind": "p", "text": "That formation happens through rigorous academics, but also through the daily life of the school: discussion, reflection, accountability, creativity, service, and the steady guidance of trusted adults." },
+            { "kind": "p", "text": "Alongside academics, students engage in:" },
+            { "kind": "list", "items": [
+              "Fine Arts",
+              "Music and performance",
+              "Public speaking",
+              "Cultural field trips",
+              "Creative exploration",
+              "Relational learning experiences that support the whole child"
+            ] },
+            { "kind": "p", "text": "We want students to leave Renton Prep not only prepared for their next academic step, but prepared to lead meaningful lives." }
+          ]
+        },
+        {
+          "id": "community",
+          "heading": "A Community that Welcomes Thoughtful Engagement",
+          "content": [
+            { "kind": "p", "text": "Renton Prep values intellectual curiosity, honest questions, and respectful engagement with ideas." },
+            { "kind": "p", "text": "We want students to learn in a community where they are known, where they are encouraged to think carefully, and where they encounter a richness of ideas and perspectives in ways that deepen both understanding and character." },
+            { "kind": "p", "text": "As a Christian school, our faith shapes the way we teach and live together. We follow the example of Jesus, who welcomed questions, honored the dignity of every person, and formed people for lives of love, wisdom, and service." }
+          ]
+        },
+        {
+          "id": "leadership",
+          "heading": "Leadership That Brings Scholarship and Practice Together",
+          "content": [
+            { "kind": "p", "text": "The Genesis Project is part of a broader vision for educational excellence at Renton Prep under the leadership of Dr. Michelle Zimmerman, PhD, an internationally recognized voice in AI and education and author of Teaching AI: Exploring New Frontiers in Education." },
+            { "kind": "p", "text": "Under her leadership, Renton Prep has pursued innovation with seriousness, accountability, and a clear sense of educational responsibility." },
+            { "kind": "p", "text": "The school has been recognized as:" },
+            { "kind": "list", "items": [
+              "A recognized Microsoft Flagship School, one of a select number of K–12 schools in the United States to receive this designation",
+              "Washington State's first Cognia STEM-Certified K–12 school"
+            ] },
+            { "kind": "p", "text": "These recognitions reflect more than innovation alone. They reflect a commitment to excellence, thoughtful leadership, and meaningful student preparation." }
+          ]
+        },
+        {
+          "id": "different",
+          "heading": "What Makes Renton Prep Different",
+          "content": [
+            { "kind": "p", "text": "Families often come to Renton Prep looking for something increasingly rare: a school that is academically strong, deeply relational, faith-centered, and thoughtful about innovation." },
+            { "kind": "p", "text": "The Genesis Project helps make that possible. It reflects a school that is:" },
+            { "kind": "list", "items": [
+              "Personal without being informal in its standards",
+              "Innovative without being reactionary",
+              "Faith-centered without being intellectually narrow",
+              "Small enough to know students deeply, yet strong enough to prepare them well"
+            ] }
+          ]
+        }
+      ],
+      "visitHeading": "Visit Renton Prep",
+      "visitProse": [
+        "The best way to understand Renton Prep and the Genesis Project is to experience the school in person.",
+        "We invite you to visit campus, observe the life of the school, and learn more about how Renton Prep helps students grow in knowledge, character, and purpose."
+      ],
+      "ctaPrimary": { "label": "Request a Visit", "href": "/request-information" },
+      "ctaSecondary": { "label": "Start Your Application", "href": "{{settings.applyUrl}}" }
+    }
+  ]
+}
