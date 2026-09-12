@@ -1,9 +1,22 @@
-import Link from "next/link";
-
+import { MarketingLink } from "@/components/marketing/MarketingLink";
 import { MarketingShell } from "@/components/marketing/MarketingShell";
-import { SCHOOL_HISTORY_MILESTONES } from "@/lib/school-history";
+import type { AboutPageData } from "@/lib/cms/types";
 
-export function AboutSchoolContent() {
+export function AboutSchoolContent({
+  eyebrow,
+  heading,
+  lead,
+  introProse,
+  evolvedHeading,
+  evolvedProse,
+  todayHeading,
+  todayProse,
+  momentsHeading,
+  milestones,
+  continuingHeading,
+  continuingProse,
+  ctas,
+}: Omit<AboutPageData, "type">) {
   return (
     <MarketingShell>
       <section
@@ -12,25 +25,14 @@ export function AboutSchoolContent() {
       >
         <div className="container">
           <div className="section-intro section-intro--center">
-            <span className="eyebrow eyebrow--muted">About Renton Prep</span>
-            <h1 id="about-heading">Our Story</h1>
-            <p className="about-lead">
-              Renton Prep grew out of a long tradition of Christian education in
-              the Renton community.
-            </p>
+            <span className="eyebrow eyebrow--muted">{eyebrow}</span>
+            <h1 id="about-heading">{heading}</h1>
+            <p className="about-lead">{lead}</p>
           </div>
           <div className="about-prose">
-            <p>
-              That story begins in 1953 with Holy Cross Lutheran Church and
-              continued with the opening of Holy Cross Lutheran School in 1962.
-              Over time, that foundation carried forward through Amazing Grace
-              and eventually became what is now Renton Prep.
-            </p>
-            <p>
-              While much has changed, the purpose has remained consistent: care
-              for students, take learning seriously, and ground both in a clear
-              sense of meaning.
-            </p>
+            {introProse.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </section>
@@ -41,24 +43,12 @@ export function AboutSchoolContent() {
       >
         <div className="container">
           <div className="section-intro">
-            <h2 id="evolved-heading">How the School Evolved</h2>
+            <h2 id="evolved-heading">{evolvedHeading}</h2>
           </div>
           <div className="about-prose">
-            <p>
-              In the early 1990s, the school began to rethink how learning
-              should work.
-            </p>
-            <p>
-              Technology was introduced into classrooms, not as an add-on, but as
-              part of a broader effort to help students think, create, and
-              engage more deeply.
-            </p>
-            <p>
-              By the mid-2000s, this work expanded into formal research in
-              partnership with the University of Washington. Since then, the
-              approach has been steady: test ideas, study what works, and apply
-              it in the classroom.
-            </p>
+            {evolvedProse.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </section>
@@ -69,20 +59,12 @@ export function AboutSchoolContent() {
       >
         <div className="container">
           <div className="section-intro">
-            <h2 id="today-heading">Renton Prep Today</h2>
+            <h2 id="today-heading">{todayHeading}</h2>
           </div>
           <div className="about-prose">
-            <p>
-              In 2015, Renton Prep opened its Renton campus. In 2019, the
-              remainder of the school&apos;s Seattle community joined that
-              location, bringing the full K–12 program together in one place.
-            </p>
-            <p>
-              Today, Renton Prep reflects both its history and its direction. It
-              is a school grounded in the Christian faith, shaped by research,
-              and focused on helping students think clearly, act responsibly, and
-              engage meaningfully with the world.
-            </p>
+            {todayProse.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </section>
@@ -94,10 +76,10 @@ export function AboutSchoolContent() {
       >
         <div className="container">
           <div className="section-intro">
-            <h2 id="moments-heading">Key Moments</h2>
+            <h2 id="moments-heading">{momentsHeading}</h2>
           </div>
           <ul className="history-timeline">
-            {SCHOOL_HISTORY_MILESTONES.map((m, i) => (
+            {milestones.map((m, i) => (
               <li key={i}>
                 <span className="history-timeline-year">{m.year}</span>
                 <span className="history-timeline-text">{m.text}</span>
@@ -113,25 +95,23 @@ export function AboutSchoolContent() {
       >
         <div className="container">
           <div className="section-intro">
-            <h2 id="continuing-heading">A Continuing Story</h2>
+            <h2 id="continuing-heading">{continuingHeading}</h2>
           </div>
           <div className="about-prose">
-            <p>
-              Renton Prep continues to grow and adapt, but its foundation
-              remains the same.
-            </p>
-            <p>
-              The goal is not just to prepare students for what comes next, but
-              to help them live thoughtful, meaningful lives.
-            </p>
+            {continuingProse.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
           </div>
           <div className="about-page-ctas">
-            <Link href="/#mission" className="btn btn-secondary">
-              Mission &amp; vision on the homepage
-            </Link>
-            <Link href="/#next-steps" className="btn btn-primary">
-              Request Information
-            </Link>
+            {ctas.map((cta, i) => (
+              <MarketingLink
+                key={cta.label}
+                href={cta.href}
+                className={i === ctas.length - 1 ? "btn btn-primary" : "btn btn-secondary"}
+              >
+                {cta.label}
+              </MarketingLink>
+            ))}
           </div>
         </div>
       </section>

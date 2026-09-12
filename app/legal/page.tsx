@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-import { LegalPageContent } from "@/components/marketing/LegalPageContent";
+import { PageRenderer } from "@/components/cms/PageRenderer";
+import { getPageBySlug } from "@/lib/cms/pageService";
 
 export const metadata: Metadata = {
   title: "Legal & Privacy",
@@ -13,10 +14,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function LegalPage() {
+export default async function LegalPage() {
+  const page = await getPageBySlug("legal");
+  if (!page) return null;
+
   return (
     <div className="marketing-root">
-      <LegalPageContent />
+      <PageRenderer sections={page.sections} />
     </div>
   );
 }

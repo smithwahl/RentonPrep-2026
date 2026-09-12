@@ -1,13 +1,18 @@
-import Link from "next/link";
-
+import { MarketingLink } from "@/components/marketing/MarketingLink";
 import { MarketingShell } from "@/components/marketing/MarketingShell";
-import { recognitions, site } from "@/lib/site";
+import type { AwardsPageData } from "@/lib/cms/types";
 
 /**
  * Awards / recognition page — only repeats claims already used on the public site
- * (home, metrics, lib/site). No new awards or statistics.
+ * (home, metrics, settings). No new awards or statistics.
  */
-export function AwardsPageContent() {
+export function AwardsPageContent({
+  eyebrow,
+  heading,
+  intro,
+  items,
+  buttons,
+}: Omit<AwardsPageData, "type">) {
   return (
     <MarketingShell>
       <section
@@ -16,12 +21,9 @@ export function AwardsPageContent() {
       >
         <div className="container">
           <div className="section-intro section-intro--center">
-            <span className="eyebrow eyebrow--muted">Recognition</span>
-            <h1 id="awards-heading">Awards &amp; recognition</h1>
-            <p style={{ maxWidth: "52ch", margin: "0 auto" }}>
-              {site.tagline}. The points below match how we describe Renton Prep
-              across this site.
-            </p>
+            <span className="eyebrow eyebrow--muted">{eyebrow}</span>
+            <h1 id="awards-heading">{heading}</h1>
+            <p style={{ maxWidth: "52ch", margin: "0 auto" }}>{intro}</p>
           </div>
           <ul
             style={{
@@ -34,16 +36,16 @@ export function AwardsPageContent() {
               listStyle: "none",
             }}
           >
-            {recognitions.map((r) => (
+            {items.map((item) => (
               <li
-                key={r.label}
+                key={item}
                 style={{
                   fontSize: "16px",
                   lineHeight: 1.55,
                   color: "var(--color-text-muted)",
                 }}
               >
-                {r.label}
+                {item}
               </li>
             ))}
           </ul>
@@ -51,15 +53,15 @@ export function AwardsPageContent() {
             className="btn-group"
             style={{ justifyContent: "center", flexWrap: "wrap" }}
           >
-            <Link href={site.urls.genesisProject} className="btn btn-secondary">
-              The Genesis Project
-            </Link>
-            <Link href={site.urls.about} className="btn btn-secondary">
-              Our story
-            </Link>
-            <Link href={site.urls.contact} className="btn btn-primary">
-              Request information
-            </Link>
+            {buttons.map((button, i) => (
+              <MarketingLink
+                key={button.label}
+                href={button.href}
+                className={i === buttons.length - 1 ? "btn btn-primary" : "btn btn-secondary"}
+              >
+                {button.label}
+              </MarketingLink>
+            ))}
           </div>
         </div>
       </section>

@@ -1,8 +1,15 @@
 import Link from "next/link";
 
-import { site } from "@/lib/site";
+import type { GenesisTeaserSectionData } from "@/lib/cms/types";
 
-export function GenesisSection() {
+export function GenesisSection({
+  eyebrow,
+  heading,
+  description,
+  items,
+  ctaLabel,
+  ctaHref,
+}: Omit<GenesisTeaserSectionData, "type">) {
   return (
     <section
       className="section section--alt"
@@ -12,11 +19,14 @@ export function GenesisSection() {
       <div className="container">
         <div className="genesis-layout">
           <div className="genesis-content">
-            <span className="eyebrow eyebrow--muted">The Genesis Project</span>
+            <span className="eyebrow eyebrow--muted">{eyebrow}</span>
             <h2 id="genesis-heading">
-              Learning to Lead
-              <br />
-              the Tool
+              {heading.split("\n").map((line, i, arr) => (
+                <span key={i}>
+                  {line}
+                  {i < arr.length - 1 ? <br /> : null}
+                </span>
+              ))}
             </h2>
             <p
               style={{
@@ -26,54 +36,24 @@ export function GenesisSection() {
                 marginTop: "var(--space-2)",
               }}
             >
-              A K–5 curriculum rooted in Renton Prep&apos;s mission, forming
-              elementary-age learners who think critically, ask good questions,
-              and understand what the tools they use can and cannot do.
+              {description}
             </p>
             <div className="genesis-list">
-              <div className="genesis-item">
-                <div className="genesis-item-num" aria-hidden="true">
-                  1
+              {items.map((item, i) => (
+                <div className="genesis-item" key={item.title}>
+                  <div className="genesis-item-num" aria-hidden="true">
+                    {i + 1}
+                  </div>
+                  <div className="genesis-item-body">
+                    <h4>{item.title}</h4>
+                    <p>{item.body}</p>
+                  </div>
                 </div>
-                <div className="genesis-item-body">
-                  <h4>Critical Thinking First</h4>
-                  <p>
-                    Students learn to question AI outputs, verify sources, and
-                    apply their own reasoning, so they lead the tool rather than
-                    follow it.
-                  </p>
-                </div>
-              </div>
-              <div className="genesis-item">
-                <div className="genesis-item-num" aria-hidden="true">
-                  2
-                </div>
-                <div className="genesis-item-body">
-                  <h4>Age-Appropriate Exposure</h4>
-                  <p>
-                    Each grade introduces concepts at the right developmental
-                    moment, building on prior learning so understanding deepens
-                    naturally, K through 5.
-                  </p>
-                </div>
-              </div>
-              <div className="genesis-item">
-                <div className="genesis-item-num" aria-hidden="true">
-                  3
-                </div>
-                <div className="genesis-item-body">
-                  <h4>Ethical Frameworks</h4>
-                  <p>
-                    From the earliest grades, students explore questions of
-                    responsibility, authorship, and impact, grounded in Christian
-                    ethics and human dignity.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
             <div style={{ marginTop: "var(--space-5)" }}>
-              <Link href={site.urls.genesisProject} className="btn btn-secondary">
-                Learn more about the Genesis Project
+              <Link href={ctaHref} className="btn btn-secondary">
+                {ctaLabel}
               </Link>
             </div>
           </div>

@@ -1,0 +1,22 @@
+{
+  "title": "Careers",
+  "slug": "careers",
+  "pageType": "standard",
+  "status": "published",
+  "seo": {
+    "seoTitle": "Careers",
+    "seoDescription": "Join Renton Prep's work: inquiries from educators, interns, and contributors who share our mission.",
+    "noindex": false
+  },
+  "sections": [
+    {
+      "type": "careersPage",
+      "eyebrow": "Careers",
+      "heading": "Join our work",
+      "body": "Renton Prep is built around a master–apprentice model of learning: educators and students working alongside each other toward genuine understanding. We welcome inquiries from educators, interns, and contributors who share our mission and want to be part of that work.",
+      "phoneButton": { "label": "Call {{settings.phone.display}}", "href": "tel:{{settings.phone.tel}}" },
+      "ctaButton": { "label": "Request information", "href": "/request-information" },
+      "microcopy": "{{settings.microcopy.noCommitment}}"
+    }
+  ]
+}

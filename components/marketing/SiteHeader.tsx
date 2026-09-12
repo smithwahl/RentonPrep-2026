@@ -6,17 +6,7 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 
 import { MarketingLink } from "@/components/marketing/MarketingLink";
-import { site } from "@/lib/site";
-
-const NAV_LINKS: { href: string; label: string }[] = [
-  { href: "/about", label: "Our story" },
-  { href: "/#mission", label: "Mission" },
-  { href: "/#research", label: "Research" },
-  { href: "/#genesis", label: "The Genesis Project" },
-  { href: "/#next-steps", label: "Admissions" },
-  { href: "/#community", label: "Community" },
-  { href: "/#faq", label: "FAQ" },
-];
+import type { MenuItemNode } from "@/lib/cms/types";
 
 const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled])';
 
@@ -38,7 +28,83 @@ function navItemIsCurrent(
   return pathname === href;
 }
 
-export function SiteHeader() {
+function DesktopNavItem({
+  item,
+  pathname,
+  hashWithoutPound,
+}: {
+  item: MenuItemNode;
+  pathname: string;
+  hashWithoutPound: string;
+}) {
+  const isCurrent = navItemIsCurrent(pathname, hashWithoutPound, item.href);
+
+  if (item.children.length === 0) {
+    return (
+      <MarketingLink href={item.href} aria-current={isCurrent ? "page" : undefined}>
+        {item.title}
+      </MarketingLink>
+    );
+  }
+
+  return (
+    <div className="nav-item">
+      <MarketingLink href={item.href} aria-current={isCurrent ? "page" : undefined}>
+        {item.title}
+      </MarketingLink>
+      <div className="nav-dropdown" role="menu" aria-label={`${item.title} submenu`}>
+        {item.children.map((child) => (
+          <MarketingLink key={child.id} href={child.href}>
+            {child.title}
+          </MarketingLink>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function MobileNavItem({
+  item,
+  pathname,
+  hashWithoutPound,
+  onNavigate,
+}: {
+  item: MenuItemNode;
+  pathname: string;
+  hashWithoutPound: string;
+  onNavigate: () => void;
+}) {
+  const isCurrent = navItemIsCurrent(pathname, hashWithoutPound, item.href);
+
+  return (
+    <>
+      <MarketingLink
+        href={item.href}
+        onClick={onNavigate}
+        aria-current={isCurrent ? "page" : undefined}
+      >
+        {item.title}
+      </MarketingLink>
+      {item.children.length > 0 ? (
+        <div className="mobile-submenu">
+          {item.children.map((child) => (
+            <MarketingLink key={child.id} href={child.href} onClick={onNavigate}>
+              {child.title}
+            </MarketingLink>
+          ))}
+        </div>
+      ) : null}
+    </>
+  );
+}
+
+export function SiteHeader({
+  navItems,
+  contactHref,
+}: {
+  navItems: MenuItemNode[];
+  contactHref: string;
+}) {
   const pathname = usePathname();
   const [hashWithoutPound, setHashWithoutPound] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -164,23 +230,18 @@ export function SiteHeader() {
           </Link>
 
           <nav className="nav" aria-label="Primary navigation">
-            {NAV_LINKS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={
-                  navItemIsCurrent(pathname, hashWithoutPound, item.href)
-                    ? "page"
-                    : undefined
-                }
-              >
-                {item.label}
-              </Link>
+            {navItems.map((item) => (
+              <DesktopNavItem
+                key={item.id}
+                item={item}
+                pathname={pathname}
+                hashWithoutPound={hashWithoutPound}
+              />
             ))}
           </nav>
 
           <div className="header-cta">
-            <Link href={site.urls.contact} className="btn btn-primary">
+            <Link href={contactHref} className="btn btn-primary">
               Request Information
             </Link>
           </div>
@@ -210,7 +271,7 @@ export function SiteHeader() {
         aria-hidden={!menuOpen}
       >
         <MarketingLink
-          href={site.urls.contact}
+          href={contactHref}
           className="btn btn-primary mobile-menu-primary-cta"
           onClick={() => setMenuOpen(false)}
         >
@@ -219,19 +280,14 @@ export function SiteHeader() {
         <p className="mobile-menu-primary-note">
           No commitment. Takes about 2 minutes.
         </p>
-        {NAV_LINKS.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            aria-current={
-              navItemIsCurrent(pathname, hashWithoutPound, item.href)
-                ? "page"
-                : undefined
-            }
-            onClick={() => setMenuOpen(false)}
-          >
-            {item.label}
-          </Link>
+        {navItems.map((item) => (
+          <MobileNavItem
+            key={item.id}
+            item={item}
+            pathname={pathname}
+            hashWithoutPound={hashWithoutPound}
+            onNavigate={() => setMenuOpen(false)}
+          />
         ))}
       </nav>
     </header>

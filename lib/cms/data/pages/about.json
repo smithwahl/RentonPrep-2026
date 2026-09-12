@@ -1,0 +1,56 @@
+{
+  "title": "About Us: Our Story",
+  "slug": "about",
+  "pageType": "hub",
+  "status": "published",
+  "seo": {
+    "seoTitle": "About Renton Prep | Our Story",
+    "seoDescription": "From Holy Cross Lutheran School (1962) to Renton Prep today. Christian education, research-informed learning, and one campus in downtown Renton.",
+    "noindex": false
+  },
+  "sections": [
+    {
+      "type": "aboutPage",
+      "eyebrow": "About Renton Prep",
+      "heading": "Our Story",
+      "lead": "Renton Prep grew out of a long tradition of Christian education in the Renton community.",
+      "introProse": [
+        "That story begins in 1953 with Holy Cross Lutheran Church and continued with the opening of Holy Cross Lutheran School in 1962. Over time, that foundation carried forward through Amazing Grace and eventually became what is now Renton Prep.",
+        "While much has changed, the purpose has remained consistent: care for students, take learning seriously, and ground both in a clear sense of meaning."
+      ],
+      "evolvedHeading": "How the School Evolved",
+      "evolvedProse": [
+        "In the early 1990s, the school began to rethink how learning should work.",
+        "Technology was introduced into classrooms, not as an add-on, but as part of a broader effort to help students think, create, and engage more deeply.",
+        "By the mid-2000s, this work expanded into formal research in partnership with the University of Washington. Since then, the approach has been steady: test ideas, study what works, and apply it in the classroom."
+      ],
+      "todayHeading": "Renton Prep Today",
+      "todayProse": [
+        "In 2015, Renton Prep opened its Renton campus. In 2019, the remainder of the school's Seattle community joined that location, bringing the full K–12 program together in one place.",
+        "Today, Renton Prep reflects both its history and its direction. It is a school grounded in the Christian faith, shaped by research, and focused on helping students think clearly, act responsibly, and engage meaningfully with the world."
+      ],
+      "momentsHeading": "Key Moments",
+      "milestones": [
+        { "year": "1953", "text": "Holy Cross Lutheran Church is established" },
+        { "year": "1962", "text": "Holy Cross Lutheran School opens" },
+        { "year": "1993", "text": "Early technology integration begins" },
+        { "year": "2006", "text": "Formal research partnerships begin" },
+        { "year": "2009", "text": "Middle school 1:1 personal device program begins" },
+        { "year": "2015", "text": "Renton Prep opens its Renton campus" },
+        { "year": "2019", "text": "Seattle campus community joins at the Renton location" },
+        { "year": "2020", "text": "Innovation in pandemic-era remote learning" },
+        { "year": "2021", "text": "Visionary Leadership Award" },
+        { "year": "2024", "text": "The Genesis Project launches" }
+      ],
+      "continuingHeading": "A Continuing Story",
+      "continuingProse": [
+        "Renton Prep continues to grow and adapt, but its foundation remains the same.",
+        "The goal is not just to prepare students for what comes next, but to help them live thoughtful, meaningful lives."
+      ],
+      "ctas": [
+        { "label": "Mission & vision on the homepage", "href": "/#mission" },
+        { "label": "Request Information", "href": "/#next-steps" }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-import { AdmissionsHubContent } from "@/components/marketing/AdmissionsHubContent";
+import { PageRenderer } from "@/components/cms/PageRenderer";
+import { getPageBySlug } from "@/lib/cms/pageService";
 
 export const metadata: Metadata = {
   title: "Admissions",
@@ -13,10 +14,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AdmissionsPage() {
+export default async function AdmissionsPage() {
+  const page = await getPageBySlug("admissions");
+  if (!page) return null;
+
   return (
     <div className="marketing-root">
-      <AdmissionsHubContent />
+      <PageRenderer sections={page.sections} />
     </div>
   );
 }
