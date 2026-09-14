@@ -16,7 +16,7 @@ const NAV_LINKS: NavItem[] = [
     href: "/about",
     label: "Our story",
     children: [
-      { href: "/new-campus", label: "New Campus" },
+      { href: "/newcampus", label: "New Campus" },
       { href: "/about/genesis", label: "The Genesis Project" },
       { href: "/awards", label: "Awards & Recognition" },
     ],
