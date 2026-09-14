@@ -1,0 +1,5 @@
+[
+  { "id": "fb-legal", "title": "Legal & privacy", "linkType": "internalPage", "slug": "legal", "order": 1, "parentId": null },
+  { "id": "fb-faq", "title": "FAQ", "linkType": "anchor", "slug": "/", "anchor": "faq", "order": 2, "parentId": null },
+  { "id": "fb-donate", "title": "Donate", "linkType": "internalPage", "slug": "donate", "order": 3, "parentId": null }
+]

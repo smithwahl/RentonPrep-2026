@@ -1,0 +1,8 @@
+[
+  { "id": "fad-admissions", "title": "Admissions", "linkType": "internalPage", "slug": "admissions", "order": 1, "parentId": null },
+  { "id": "fad-tuition", "title": "Tuition & Fees", "linkType": "anchor", "slug": "admissions", "anchor": "tuition-fees", "order": 2, "parentId": null },
+  { "id": "fad-aid", "title": "Financial Assistance", "linkType": "anchor", "slug": "admissions", "anchor": "financial-assistance", "order": 3, "parentId": null },
+  { "id": "fad-uniforms", "title": "Uniforms", "linkType": "anchor", "slug": "admissions", "anchor": "uniforms", "order": 4, "parentId": null },
+  { "id": "fad-care", "title": "Extended School Care", "linkType": "anchor", "slug": "admissions", "anchor": "extended-school-care", "order": 5, "parentId": null },
+  { "id": "fad-apply", "title": "Apply Now", "linkType": "externalUrl", "url": "https://accounts.renweb.com/password/create?clientId=admissionsParentCode&district=RPCS-WA&memberId=481", "order": 6, "parentId": null, "openInNewTab": true }
+]

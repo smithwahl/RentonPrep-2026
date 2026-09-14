@@ -1,6 +1,14 @@
 import Image from "next/image";
 
-export function MetricsSection() {
+import type { MetricsSectionData } from "@/lib/cms/types";
+
+export function MetricsSection({
+  eyebrow,
+  heading,
+  body,
+  points,
+  badges,
+}: Omit<MetricsSectionData, "type">) {
   return (
     <section
       className="section section--surface"
@@ -9,25 +17,13 @@ export function MetricsSection() {
       <div className="container">
         <div className="recognition">
           <div className="recognition-content">
-            <span className="eyebrow eyebrow--muted">Recognition</span>
-            <h2 id="recognition-heading">
-              First Cognia STEM-Accredited K–12 School in Washington
-            </h2>
-            <p className="recognition-body">
-              Renton Prep combines accredited academics, STEM distinction, and a
-              thoughtful K–12 learning journey designed to help students grow
-              with purpose, confidence, and curiosity.
-            </p>
+            <span className="eyebrow eyebrow--muted">{eyebrow}</span>
+            <h2 id="recognition-heading">{heading}</h2>
+            <p className="recognition-body">{body}</p>
             <ul className="recognition-points" role="list">
-              <li>
-                <strong>Cognia-accredited</strong> K–12 school
-              </li>
-              <li>
-                <strong>STEM-accredited</strong> program in Washington
-              </li>
-              <li>
-                <strong>The Genesis Project</strong> for K–5 students
-              </li>
+              {points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
             </ul>
           </div>
           <div
@@ -35,34 +31,20 @@ export function MetricsSection() {
             role="list"
             aria-label="Accreditation badges"
           >
-            <div className="recognition-badge" role="listitem">
-              <div className="recognition-badge-img">
-                <Image
-                  src="/cognia-accredited-badge.png"
-                  alt="Cognia Accredited: NCA CASI, NWAC, SACS CASI"
-                  width={140}
-                  height={114}
-                  style={{ objectFit: "contain" }}
-                />
+            {badges.map((badge) => (
+              <div className="recognition-badge" role="listitem" key={badge.label}>
+                <div className="recognition-badge-img">
+                  <Image
+                    src={badge.image}
+                    alt={badge.alt}
+                    width={badge.width}
+                    height={badge.height}
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+                <span className="recognition-badge-label">{badge.label}</span>
               </div>
-              <span className="recognition-badge-label">
-                Cognia Accredited
-              </span>
-            </div>
-            <div className="recognition-badge" role="listitem">
-              <div className="recognition-badge-img">
-                <Image
-                  src="/microsoft-showcase-badge.jpg"
-                  alt="Microsoft Showcase School"
-                  width={100}
-                  height={100}
-                  style={{ objectFit: "contain" }}
-                />
-              </div>
-              <span className="recognition-badge-label">
-                Microsoft Showcase School
-              </span>
-            </div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-import { AwardsPageContent } from "@/components/marketing/AwardsPageContent";
+import { PageRenderer } from "@/components/cms/PageRenderer";
+import { getPageBySlug } from "@/lib/cms/pageService";
 
 export const metadata: Metadata = {
   title: "Awards & Recognition",
@@ -13,10 +14,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AwardsPage() {
+export default async function AwardsPage() {
+  const page = await getPageBySlug("awards");
+  if (!page) return null;
+
   return (
     <div className="marketing-root">
-      <AwardsPageContent />
+      <PageRenderer sections={page.sections} />
     </div>
   );
 }

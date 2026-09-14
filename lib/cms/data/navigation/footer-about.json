@@ -1,0 +1,8 @@
+[
+  { "id": "fa-about", "title": "About Renton Prep", "linkType": "internalPage", "slug": "about", "order": 1, "parentId": null },
+  { "id": "fa-mission", "title": "Mission, Vision, & Action", "linkType": "anchor", "slug": "/", "anchor": "mission", "order": 2, "parentId": null },
+  { "id": "fa-awards", "title": "Awards and Recognition", "linkType": "internalPage", "slug": "awards", "order": 3, "parentId": null },
+  { "id": "fa-testimonials", "title": "Testimonials", "linkType": "anchor", "slug": "/", "anchor": "testimonials", "order": 4, "parentId": null },
+  { "id": "fa-blog", "title": "News & updates", "linkType": "externalUrl", "url": "https://www.instagram.com/rentonprep/", "order": 5, "parentId": null, "openInNewTab": true },
+  { "id": "fa-careers", "title": "Careers", "linkType": "internalPage", "slug": "careers", "order": 6, "parentId": null }
+]

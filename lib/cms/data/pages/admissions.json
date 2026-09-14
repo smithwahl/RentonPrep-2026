@@ -1,0 +1,93 @@
+{
+  "title": "Admissions",
+  "slug": "admissions",
+  "pageType": "hub",
+  "status": "published",
+  "seo": {
+    "seoTitle": "Admissions",
+    "seoDescription": "Practical information about enrolling at Renton Prep: how to apply, tuition and fees, financial assistance, uniforms, and extended school care.",
+    "noindex": false
+  },
+  "sections": [
+    {
+      "type": "admissionsPage",
+      "heading": "Admissions",
+      "intro": "Practical information about enrolling at Renton Prep. For step-by-step application instructions, see below; you can also reach the office any time.",
+      "enrollHeading": "How to Enroll",
+      "enrollSteps": ["Request Information", "Connect with Admissions", "Apply and Receive Decision"],
+      "enrollMicrocopy": "We guide you through each step.",
+      "primaryButton": { "label": "Request Information", "href": "/request-information" },
+      "secondaryButton": { "label": "Apply Now", "href": "{{settings.applyUrl}}" },
+      "noCommitmentMicrocopy": "No commitment. Takes about 2 minutes.",
+      "howToApplyHeading": "How to apply",
+      "howToApplyIntro": "Our application is managed through the FACTS Admissions portal. Follow the steps below to complete your application.",
+      "applySteps": [
+        {
+          "number": "1",
+          "title": "Create an account",
+          "body": "Visit the FACTS Admissions portal and select the Create an Account tab at the top of the page. You will create a login, set a password, and verify your email address before continuing."
+        },
+        {
+          "number": "2",
+          "title": "Start your application",
+          "body": "You can log in and out at any time. Your progress saves automatically. A green check mark will appear on each section once all required fields are complete."
+        },
+        {
+          "number": "3",
+          "title": "Review, submit & pay the application fee",
+          "body": "When all required fields are finished, click Review & Submit. You will then be prompted to pay the $45 application fee to complete your submission."
+        },
+        {
+          "number": "4",
+          "title": "Submit required documents",
+          "body": "Please ensure the following documents are provided to the admissions office:",
+          "list": [
+            "Most recent report card",
+            "Most recent standardized test scores",
+            "IEP, 504 plan, psychological evaluation, or testing for academic concerns (if applicable)"
+          ]
+        }
+      ],
+      "applyPrimaryButton": { "label": "Start Your Application", "href": "{{settings.applyUrl}}" },
+      "applySecondaryButton": { "label": "Request Information", "href": "/request-information" },
+      "stillHaveQuestions": "Still have questions? Contact us and we will be happy to help.",
+      "signatureName": "Dr. David Zimmerman",
+      "tuitionHeading": "Tuition & fees",
+      "tuitionSubheading": "Renton Prep Tuition Rates",
+      "tuitionIntro": "The rate includes tuition and fees, and does not include uniforms, extended before and after school care, personal classroom supplies, lunches or snacks, or personal digital devices or any other individual items that may be added as part of the school program.",
+      "schoolYear": "2026 – 2027",
+      "programs": [
+        { "name": "Kindergarten Prep – 5th Grade", "annual": "$16,750*", "monthly": "$1,396* per month" }
+      ],
+      "tuitionFootnote": "* Finance charge (3%) will apply.",
+      "financialAidHeading": "Financial assistance",
+      "financialAidSubheading": "Financial Aid",
+      "financialAidProse": [
+        "Renton Prep partners with FACTS Grant & Aid to review financial aid applications.",
+        "For new students, financial aid is reviewed after the application is submitted and the student has been accepted. Families will be notified once a decision is made.",
+        "Financial aid is part of joining the Renton Prep community. Students and families receiving aid are expected to support the school's Christ-centered approach, respect the learning environment, and contribute positively to the community.",
+        "If a student or family's actions significantly disrupt the school environment or do not align with these expectations, financial aid may be reevaluated. Decisions are made by the leadership team, and families will be notified in writing. A review can be requested, but final decisions remain with the school."
+      ],
+      "uniformsHeading": "Uniforms",
+      "uniformsSubheading": "Uniform Guidelines",
+      "uniformGroups": [
+        { "label": "Basics", "items": ["Approved uniform (Lands' End)", "Gray bottoms", "Black, non-scuff shoes", "Black, white, or gray socks/tights"] },
+        { "label": "Expectations", "items": ["Clean, neat, and well-fitted", "Natural hair colors", "No distracting styles"] },
+        { "label": "Not Allowed", "items": ["Hoodies, sweatpants, or non-P.E. athletic wear", "Open-toe shoes", "Ripped/stained clothing or visible undergarments"] },
+        { "label": "Outerwear", "items": ["Coats allowed outside only", "Approved uniform layers indoors"] },
+        { "label": "Dress Days", "items": ["Follow the theme or wear uniform"] }
+      ],
+      "uniformRule": "Simple Rule: When in doubt, keep it simple and school-appropriate.",
+      "extendedCareHeading": "Extended school care",
+      "extendedCareSubheading": "Extended Care",
+      "hoursBefore": "7:45–8:15 a.m.",
+      "hoursAfter": "3:45–4:15 p.m.",
+      "extendedCareRate": "$21/hour",
+      "extendedCareContactPhone": "{{settings.phone.display}}",
+      "extendedCareContactTel": "{{settings.phone.tel}}",
+      "extendedCareProse": "Extended Care provides a safe, supervised space for students before and after school. It is available for Kindergarten–8th grade on a drop-in basis, depending on enrollment.",
+      "whatToExpectHeading": "What to Expect",
+      "whatToExpectProse": "Students spend time reading, working on school assignments, and participating in quiet activities. After school includes snack time (from home), homework, and structured activities."
+    }
+  ]
+}

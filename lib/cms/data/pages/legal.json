@@ -1,0 +1,22 @@
+{
+  "title": "Legal & Privacy",
+  "slug": "legal",
+  "pageType": "standard",
+  "status": "published",
+  "seo": {
+    "seoTitle": "Legal & Privacy",
+    "seoDescription": "Legal and privacy contact information for Renton Preparatory Christian School.",
+    "noindex": false
+  },
+  "sections": [
+    {
+      "type": "legalPage",
+      "eyebrow": "Legal",
+      "heading": "Legal & privacy",
+      "identityLines": ["{{settings.legalName}}", "{{settings.address.line1}}", "{{settings.address.line2}}"],
+      "body": "Questions about privacy, this website, or official school records? Contact us by phone or through Request information and we will route your message to the appropriate office.",
+      "phoneButton": { "label": "Call {{settings.phone.display}}", "href": "tel:{{settings.phone.tel}}" },
+      "ctaButton": { "label": "Request information", "href": "/request-information" }
+    }
+  ]
+}

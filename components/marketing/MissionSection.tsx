@@ -1,8 +1,34 @@
 import Link from "next/link";
 
-import { missionVisionAction } from "@/lib/site";
+import type { MissionSectionData } from "@/lib/cms/types";
 
-export function MissionSection() {
+/**
+ * The C.H.R.I.S.T. tooltip in the Action card is bespoke inline markup (an <abbr>
+ * with a title), not editorial copy — kept fixed here rather than forced into CMS
+ * rich text for one acronym. See TODO in the original component history: owner
+ * still needs to supply the full expansion for a future tooltip/anchor.
+ */
+function actionExtra() {
+  return (
+    <>
+      Guided by Christ&apos;s life and ministry and expressed through our{" "}
+      <abbr className="mva-christ-acronym" title="C.H.R.I.S.T. core values">
+        C.H.R.I.S.T.
+      </abbr>{" "}
+      core values, we shape both thinking skills and adaptability so learners and
+      collaborators, from children to adults, can refine ideas, apply learning, and
+      contribute meaningfully to their communities and world.
+    </>
+  );
+}
+
+export function MissionSection({
+  eyebrow,
+  heading,
+  intro,
+  aboutHref,
+  cards,
+}: Omit<MissionSectionData, "type">) {
   return (
     <section
       className="section section--alt"
@@ -11,100 +37,40 @@ export function MissionSection() {
     >
       <div className="container">
         <div className="section-intro section-intro--center">
-          <span className="eyebrow eyebrow--muted">Our Mission</span>
-          <h2 id="mission-heading">Mission, Vision, and Action</h2>
-          <p>
-            The official statements that guide Renton Prep Christian School.
-          </p>
+          <span className="eyebrow eyebrow--muted">{eyebrow}</span>
+          <h2 id="mission-heading">{heading}</h2>
+          <p>{intro}</p>
           <p style={{ marginTop: "var(--space-2)" }}>
-            <Link href="/about" className="faq-link">
+            <Link href={aboutHref} className="faq-link">
               Read how the school grew from the Renton community
             </Link>
           </p>
         </div>
         <div className="mva-grid">
-          {/* ── 01 Mission ── */}
-          <div className="mva-card">
-            <div className="mva-card-number">01: Mission</div>
-            <h3>Our Mission</h3>
-            <p>{missionVisionAction.mission}</p>
-            <p className="mva-card-prose">
-              At Renton Prep, educators and students are both considered
-              learners, uniquely positioned to bring hope to a hurting world. We
-              follow the example of Jesus as an effective teacher who asked,
-              &ldquo;Do you hear what these children are saying?&rdquo; (Matthew
-              21:16). We follow that example by listening carefully, inviting
-              questions, and engaging multiple perspectives.
-            </p>
-            <p className="mva-card-prose">
-              Our mission calls learners to practice critical thinking and
-              problem‑solving through productive struggle, both individually and
-              collaboratively. In a rapidly changing world, we view challenge and
-              uncertainty not as obstacles to avoid, but as essential
-              opportunities to innovate and grow.
-            </p>
-            <p className="mva-card-prose">
-              We are committed to forming learners who approach relationships,
-              work, and daily life with discernment, resilience, responsibility,
-              and purpose.
-            </p>
-          </div>
-
-          {/* ── 02 Vision ── */}
-          <div className="mva-card">
-            <div className="mva-card-number">02: Vision</div>
-            <h3>Our Vision</h3>
-            <p>{missionVisionAction.vision}</p>
-            <p className="mva-card-prose">
-              As technology and society continue to evolve, our vision remains
-              anchored in our enduring mission and values, while thoughtfully
-              adapting emerging skills and human traits that remain relevant in a
-              continually changing world.
-            </p>
-            <p className="mva-card-prose">
-              We seek to build a legacy shaped by the God-given talent, insight,
-              and voice of students, educators, and collaborators, by cultivating
-              strong and nuanced thinking skills, with the grit, wisdom, and
-              flexibility required to move ideas into action.
-            </p>
-          </div>
-
-          {/* ── 03 Action ── */}
-          <div className="mva-card">
-            <div className="mva-card-number">03: Action</div>
-            <h3>Our Action</h3>
-            <p>{missionVisionAction.action}</p>
-            <p className="mva-card-prose">
-              A technology‑enabled education means more than incorporating
-              modern tools and secure systems. It requires thoughtful learning
-              design. As technology advances, our practices adapt. Our values
-              remain constant.
-            </p>
-            <p className="mva-card-prose">
-              {/*
-               * TODO (owner): Provide the expansion of each letter in
-               * C.H.R.I.S.T. so this can be wired to a tooltip or an
-               * /about#christ-values anchor once the values page is built.
-               */}
-              Guided by Christ&apos;s life and ministry and expressed through
-              our{" "}
-              <abbr
-                className="mva-christ-acronym"
-                title="C.H.R.I.S.T. core values"
-              >
-                C.H.R.I.S.T.
-              </abbr>{" "}
-              core values, we shape both thinking skills and adaptability so
-              learners and collaborators, from children to adults, can refine
-              ideas, apply learning, and contribute meaningfully to their
-              communities and world.
-            </p>
-            <p className="mva-card-prose">
-              All Genesis Project–related action remains aligned with Renton
-              Prep&apos;s mission, vision, and beliefs while allowing approved
-              translation for secular or interorganizational applications.
-            </p>
-          </div>
+          {cards.map((card, i) => (
+            <div className="mva-card" key={card.title}>
+              <div className="mva-card-number">{card.number}</div>
+              <h3>{card.title}</h3>
+              <p>{card.summary}</p>
+              {i === cards.length - 1 ? (
+                <>
+                  <p className="mva-card-prose">{card.prose[0]}</p>
+                  <p className="mva-card-prose">{actionExtra()}</p>
+                  {card.prose.slice(1).map((paragraph, j) => (
+                    <p className="mva-card-prose" key={j}>
+                      {paragraph}
+                    </p>
+                  ))}
+                </>
+              ) : (
+                card.prose.map((paragraph, j) => (
+                  <p className="mva-card-prose" key={j}>
+                    {paragraph}
+                  </p>
+                ))
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>

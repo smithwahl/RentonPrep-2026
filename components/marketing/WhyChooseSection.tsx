@@ -1,19 +1,22 @@
 import Link from "next/link";
 
-import { recognitions, site } from "@/lib/site";
+import type { WhyChooseSectionData } from "@/lib/cms/types";
 
-export function WhyChooseSection() {
+export function WhyChooseSection({
+  eyebrow,
+  heading,
+  intro,
+  items,
+  ctaLabel,
+  ctaHref,
+}: Omit<WhyChooseSectionData, "type">) {
   return (
     <section className="section section--surface" aria-labelledby="choose-heading">
       <div className="container">
         <div className="section-intro section-intro--center">
-          <span className="eyebrow eyebrow--muted">Recognition</span>
-          <h2 id="choose-heading">What Families Come Here For</h2>
-          <p>
-            A small, fully accredited Christian school where students are known
-            by name, challenged academically, and formed in faith. Built for
-            families who want both genuine care and serious scholarship.
-          </p>
+          <span className="eyebrow eyebrow--muted">{eyebrow}</span>
+          <h2 id="choose-heading">{heading}</h2>
+          <p>{intro}</p>
         </div>
         <ul
           style={{
@@ -25,22 +28,22 @@ export function WhyChooseSection() {
             gap: "var(--space-2)",
           }}
         >
-          {recognitions.map((r) => (
+          {items.map((item) => (
             <li
-              key={r.label}
+              key={item}
               style={{
                 fontSize: "16px",
                 lineHeight: 1.55,
                 color: "var(--color-text-muted)",
               }}
             >
-              {r.label}
+              {item}
             </li>
           ))}
         </ul>
         <div style={{ textAlign: "center" }}>
-          <Link href={site.urls.awards} className="btn btn-secondary">
-            Awards and Recognition
+          <Link href={ctaHref} className="btn btn-secondary">
+            {ctaLabel}
           </Link>
         </div>
       </div>

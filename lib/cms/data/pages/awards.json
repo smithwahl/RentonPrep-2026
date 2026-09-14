@@ -1,0 +1,30 @@
+{
+  "title": "Awards & Recognition",
+  "slug": "awards",
+  "pageType": "standard",
+  "status": "published",
+  "seo": {
+    "seoTitle": "Awards & Recognition",
+    "seoDescription": "Renton Prep's accreditations and recognitions: Cognia STEM-certified K–12, Microsoft Showcase School, and more.",
+    "noindex": false
+  },
+  "sections": [
+    {
+      "type": "awardsPage",
+      "eyebrow": "Recognition",
+      "heading": "Awards & recognition",
+      "intro": "A Premier Microsoft Showcase School. The points below match how we describe Renton Prep across this site.",
+      "items": [
+        "Christ-centered from the classroom to the culture. Faith shapes how we teach, how we relate, and how we learn",
+        "Internationally and state accredited, held to rigorous academic standards across K–12",
+        "Washington's first Cognia STEM–certified K–12 school",
+        "Personalized, research-informed learning in a school small enough to know every student"
+      ],
+      "buttons": [
+        { "label": "The Genesis Project", "href": "/about/genesis" },
+        { "label": "Our story", "href": "/about" },
+        { "label": "Request information", "href": "/request-information" }
+      ]
+    }
+  ]
+}
