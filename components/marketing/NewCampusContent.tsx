@@ -14,7 +14,7 @@ export function NewCampusContent() {
             <span className="eyebrow eyebrow--muted">Our Story</span>
             <h1 id="new-campus-heading">New Campus</h1>
             <p className="about-lead">
-              Renton Prep is approved by the appropriate education authorities. Current approval certificates are provided below..
+              Renton Prep is approved by the Washington State Board of Education. Current approval certificates are provided below.
             </p>
           </div>
 
