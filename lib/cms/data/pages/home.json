@@ -24,11 +24,13 @@
       "heading": "First Cognia STEM-Accredited K–12 School in Washington",
       "body": "Renton Prep combines accredited academics, STEM distinction, and a thoughtful K–12 learning journey designed to help students grow with purpose, confidence, and curiosity.",
       "points": [
+        "State Approved Private School 2026-2027",
         "Cognia-accredited K–12 school",
         "STEM-accredited program in Washington",
         "The Genesis Project for K–5 students"
       ],
       "badges": [
+        { "image": "/27042321410257.png", "alt": "State Approved Private School 2026-2027", "label": "Approved Private School 2026-2027", "width": 140, "height": 114 },
         { "image": "/cognia-accredited-badge.png", "alt": "Cognia Accredited: NCA CASI, NWAC, SACS CASI", "label": "Cognia Accredited", "width": 140, "height": 114 },
         { "image": "/microsoft-showcase-badge.jpg", "alt": "Microsoft Showcase School", "label": "Microsoft Showcase School", "width": 100, "height": 100 }
       ]
