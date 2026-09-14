@@ -48,6 +48,7 @@
         "The goal is not just to prepare students for what comes next, but to help them live thoughtful, meaningful lives."
       ],
       "ctas": [
+        { "label": "Certificate of Private School Approval", "href": "/newcampus" },
         { "label": "Mission & vision on the homepage", "href": "/#mission" },
         { "label": "Request Information", "href": "/#next-steps" }
       ]

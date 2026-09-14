@@ -17,6 +17,8 @@ const FAQ_SECTION: PageSection = { type: "faq" };
  * rather than silently dropping FAQ.
  */
 function withFaqSection(sections: PageSection[]): PageSection[] {
+  if (sections.some((s) => s.type === "faq")) return sections;
+
   const heartAndMindIndex = sections.findIndex((s) => s.type === "heartAndMind");
   if (heartAndMindIndex === -1) return [...sections, FAQ_SECTION];
 

@@ -799,6 +799,15 @@
   background: var(--color-surface-alt);
 }
 
+/* Non-interactive header for an always-expanded card (no toggle, no chevron) */
+.marketing-root .faq-group-header--static {
+  cursor: default;
+}
+
+.marketing-root .faq-group-header--static:hover {
+  background: var(--color-surface);
+}
+
 .marketing-root .faq-question {
   font-size: 15px;
   font-weight: 600;
@@ -1012,6 +1021,20 @@
   gap: var(--space-2);
   justify-content: center;
   margin-top: var(--space-5);
+}
+
+.marketing-root .certificate-frame {
+  max-width: 720px;
+  margin: var(--space-5) auto 0;
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  box-shadow: var(--shadow-md, 0 4px 16px rgba(0, 0, 0, 0.12));
+}
+
+.marketing-root .certificate-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 520px) {
