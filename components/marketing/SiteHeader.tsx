@@ -8,8 +8,19 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { MarketingLink } from "@/components/marketing/MarketingLink";
 import { site } from "@/lib/site";
 
-const NAV_LINKS: { href: string; label: string }[] = [
-  { href: "/about", label: "Our story" },
+type NavChild = { href: string; label: string };
+type NavItem = { href: string; label: string; children?: NavChild[] };
+
+const NAV_LINKS: NavItem[] = [
+  {
+    href: "/about",
+    label: "Our story",
+    children: [
+      { href: "/new-campus", label: "New Campus" },
+      { href: "/about/genesis", label: "The Genesis Project" },
+      { href: "/awards", label: "Awards & Recognition" },
+    ],
+  },
   { href: "/#mission", label: "Mission" },
   { href: "/#research", label: "Research" },
   { href: "/#genesis", label: "The Genesis Project" },
@@ -36,6 +47,18 @@ function navItemIsCurrent(
     return pathname === "/about" || pathname.startsWith("/about/");
   }
   return pathname === href;
+}
+
+/** True when the item's own link or any of its dropdown children is current. */
+function navGroupIsCurrent(
+  pathname: string,
+  hashWithoutPound: string,
+  item: NavItem,
+): boolean {
+  if (navItemIsCurrent(pathname, hashWithoutPound, item.href)) return true;
+  return (item.children ?? []).some((child) =>
+    navItemIsCurrent(pathname, hashWithoutPound, child.href),
+  );
 }
 
 export function SiteHeader() {
@@ -164,19 +187,58 @@ export function SiteHeader() {
           </Link>
 
           <nav className="nav" aria-label="Primary navigation">
-            {NAV_LINKS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={
-                  navItemIsCurrent(pathname, hashWithoutPound, item.href)
-                    ? "page"
-                    : undefined
-                }
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((item) => {
+              if (!item.children) {
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    aria-current={
+                      navItemIsCurrent(pathname, hashWithoutPound, item.href)
+                        ? "page"
+                        : undefined
+                    }
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+
+              return (
+                <div key={item.href} className="nav-item">
+                  <Link
+                    href={item.href}
+                    aria-current={
+                      navGroupIsCurrent(pathname, hashWithoutPound, item)
+                        ? "page"
+                        : undefined
+                    }
+                  >
+                    {item.label}
+                  </Link>
+                  <div className="nav-dropdown" role="menu">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        role="menuitem"
+                        aria-current={
+                          navItemIsCurrent(
+                            pathname,
+                            hashWithoutPound,
+                            child.href,
+                          )
+                            ? "page"
+                            : undefined
+                        }
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </nav>
 
           <div className="header-cta">
@@ -220,18 +282,41 @@ export function SiteHeader() {
           No commitment. Takes about 2 minutes.
         </p>
         {NAV_LINKS.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            aria-current={
-              navItemIsCurrent(pathname, hashWithoutPound, item.href)
-                ? "page"
-                : undefined
-            }
-            onClick={() => setMenuOpen(false)}
-          >
-            {item.label}
-          </Link>
+          <div key={item.href} className="mobile-nav-group">
+            <Link
+              href={item.href}
+              aria-current={
+                item.children
+                  ? navGroupIsCurrent(pathname, hashWithoutPound, item)
+                    ? "page"
+                    : undefined
+                  : navItemIsCurrent(pathname, hashWithoutPound, item.href)
+                    ? "page"
+                    : undefined
+              }
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+            {item.children && (
+              <div className="mobile-nav-submenu">
+                {item.children.map((child) => (
+                  <Link
+                    key={child.href}
+                    href={child.href}
+                    aria-current={
+                      navItemIsCurrent(pathname, hashWithoutPound, child.href)
+                        ? "page"
+                        : undefined
+                    }
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {child.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
       </nav>
     </header>

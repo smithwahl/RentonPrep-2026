@@ -358,6 +358,41 @@ body.menu-open {
   background: var(--color-primary-light);
 }
 
+.marketing-root .nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.marketing-root .nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  padding: 6px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  flex-direction: column;
+  gap: 2px;
+  z-index: 110;
+}
+
+/* Flush against the trigger (no gap) so the pointer never crosses dead
+   space between the two — a gap there breaks hover before it reaches
+   the dropdown. */
+.marketing-root .nav-item:hover .nav-dropdown,
+.marketing-root .nav-item:focus-within .nav-dropdown {
+  display: flex;
+}
+
+.marketing-root .nav-dropdown a {
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+
 .marketing-root .header-cta {
   flex-shrink: 0;
 }
@@ -424,6 +459,24 @@ body.menu-open {
   background: var(--color-primary-light);
   border-color: rgba(98, 91, 196, 0.3);
   color: var(--color-primary);
+}
+
+.marketing-root .mobile-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.marketing-root .mobile-nav-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-left: var(--space-4);
+}
+
+.marketing-root .mobile-nav-submenu a {
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .marketing-root .mobile-menu .mobile-menu-primary-cta {

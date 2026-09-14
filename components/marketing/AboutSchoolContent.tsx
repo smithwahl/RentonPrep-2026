@@ -126,6 +126,9 @@ export function AboutSchoolContent() {
             </p>
           </div>
           <div className="about-page-ctas">
+            <Link href="/new-campus" className="btn btn-secondary">
+              Certificate of Private School Approval
+            </Link>
             <Link href="/#mission" className="btn btn-secondary">
               Mission &amp; vision on the homepage
             </Link>
