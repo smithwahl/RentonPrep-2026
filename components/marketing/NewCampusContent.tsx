@@ -22,18 +22,13 @@ export function NewCampusContent() {
             <div className="faq-group open">
               <div className="faq-group-header faq-group-header--static">
                 <span className="faq-question">
-                  Washington State Board of Education Certificate of Private
-                  School Approval, 2026-2027
+                  Washington State Board of Education Certificate of Private School Approval, 2026-2027
                 </span>
               </div>
               <div className="faq-body">
                 <div className="faq-body-inner">
                   <p>
-                    Each year, the Washington State Board of Education
-                    reviews our school and confirms that we meet every
-                    condition required under Chapter 28A.195 RCW and Chapter
-                    180-90 WAC. That approval is renewed annually, and our
-                    current certificate covers the 2026-2027 school year.
+                    Each year, the Washington State Board of Education reviews our school and confirms that we meet every condition required under Chapter 28A.195 RCW and Chapter 180-90 WAC. That approval is renewed annually, and our current certificate covers the 2026-2027 adjusted school year for our new campus location.
                   </p>
                   <div className="certificate-frame">
                     <Image
