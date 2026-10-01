@@ -19,6 +19,31 @@ jobs:
         with:
           submodules: true
           lfs: false
+      - name: Create production environment file
+        env:
+          # NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          # NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
+          # NEXT_PUBLIC_APPLY_URL: ${{ secrets.NEXT_PUBLIC_APPLY_URL }}
+          CMS_MENUS_SOURCE: ${{ secrets.CMS_MENUS_SOURCE }}
+          CMS_MENUS_API_URL: ${{ secrets.CMS_MENUS_API_URL }}
+          CMS_MENUS_API_KEY: ${{ secrets.CMS_MENUS_API_KEY }}
+          # CMS_PAGES_API_URL: ${{ secrets.CMS_PAGES_API_URL }}
+          # CMS_PAGES_API_KEY: ${{ secrets.CMS_PAGES_API_KEY }}
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const keys = [
+            'CMS_MENUS_SOURCE', 'CMS_MENUS_API_URL', 'CMS_MENUS_API_KEY',
+          ];
+          if (!process.env.CMS_MENUS_API_KEY) {
+            throw new Error('CMS_MENUS_API_KEY must be set in GitHub Secrets');
+          }
+          const content = keys
+            .filter((key) => process.env[key])
+            .map((key) => `${key}=${JSON.stringify(process.env[key]).replace(/\$/g, '\\$')}`)
+            .join('\n');
+          fs.writeFileSync('.env.production', `${content}\n`, { mode: 0o600 });
+          NODE
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
