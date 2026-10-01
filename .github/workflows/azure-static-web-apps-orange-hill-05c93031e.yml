@@ -21,7 +21,7 @@ jobs:
           lfs: false
       - name: Create production environment file
         env:
-          # NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
           # NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
           # NEXT_PUBLIC_APPLY_URL: ${{ secrets.NEXT_PUBLIC_APPLY_URL }}
           CMS_MENUS_SOURCE: ${{ secrets.CMS_MENUS_SOURCE }}
@@ -33,10 +33,13 @@ jobs:
           node <<'NODE'
           const fs = require('node:fs');
           const keys = [
-            'CMS_MENUS_SOURCE', 'CMS_MENUS_API_URL', 'CMS_MENUS_API_KEY',
+            'CMS_MENUS_SOURCE', 'CMS_MENUS_API_URL', 'CMS_MENUS_API_KEY', 'NEXT_PUBLIC_SITE_URL',
           ];
           if (!process.env.CMS_MENUS_API_KEY) {
             throw new Error('CMS_MENUS_API_KEY must be set in GitHub Secrets');
+          }
+          if (!process.env.NEXT_PUBLIC_SITE_URL) {
+            throw new Error('NEXT_PUBLIC_SITE_URL must be set in GitHub Secrets');
           }
           const content = keys
             .filter((key) => process.env[key])
