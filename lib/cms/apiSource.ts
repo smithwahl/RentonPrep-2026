@@ -2,27 +2,15 @@ import type { MenuLocation, Page, RawMenuItem } from "@/lib/cms/types";
 
 /**
  * Server-only data source for the custom .NET CMS API (Agape.CmsApi — RentonPrep.Page repo),
- * used by dataSource.ts only when CMS_SOURCE=api. Calls two separate Azure Function Apps —
- * one for menus, one for pages — that read Postgres directly; the frontend itself never talks
- * to the database. GetPage/GetPageBySlug already return JSON shaped exactly like this file's
- * Page type (see RentonPrep.Page/CmsPages/Widgets/), so page fetches need no reshaping; only
- * the menu response needs flattening from its raw menuItems[] shape into RawMenuItem[].
+ * used by dataSource.ts when the corresponding CMS source is set to api. Calls two separate
+ * Azure Function Apps — one for menus, one for pages — that read Postgres directly; the
+ * frontend itself never talks to the database. Both responses match the local CMS types.
  */
-
-type ApiLinkMenuItem = {
-  contentItemId: string;
-  displayText: string;
-  linkMenuItemPart: { url: string; target: string | null } | null;
-};
-
-type ApiMenuItemsResult = {
-  menuItems: ApiLinkMenuItem[];
-};
 
 function apiBase(envVar: string): string {
   const base = process.env[envVar];
   if (!base) {
-    throw new Error(`${envVar} must be set when CMS_SOURCE=api`);
+    throw new Error(`${envVar} must be set when its CMS source is api`);
   }
   return base.replace(/\/+$/, "");
 }
@@ -42,11 +30,6 @@ function withKey(url: string, envVar: string): string {
   return `${url}${separator}code=${encodeURIComponent(key)}`;
 }
 
-function pathToSlug(path: string): string {
-  const trimmed = path.replace(/^\/+/, "");
-  return trimmed === "" ? "/" : trimmed;
-}
-
 export async function fetchNavigationFromApi(location: MenuLocation): Promise<RawMenuItem[]> {
   const url = withKey(`${menusApiBase()}/menu/location/${location}`, "CMS_MENUS_API_KEY");
   const res = await fetch(url);
@@ -55,20 +38,7 @@ export async function fetchNavigationFromApi(location: MenuLocation): Promise<Ra
     throw new Error(`CmsMenus API error ${res.status} fetching navigation for ${location}`);
   }
 
-  const result = (await res.json()) as ApiMenuItemsResult;
-  return result.menuItems.map((item, index): RawMenuItem => {
-    const itemUrl = item.linkMenuItemPart?.url ?? "#";
-    const isInternal = itemUrl.startsWith("/");
-    return {
-      id: item.contentItemId,
-      title: item.displayText,
-      linkType: isInternal ? "internalPage" : "externalUrl",
-      slug: isInternal ? pathToSlug(itemUrl) : undefined,
-      url: isInternal ? undefined : itemUrl,
-      order: index,
-      parentId: null,
-    };
-  });
+  return (await res.json()) as RawMenuItem[];
 }
 
 export async function fetchPageBySlugFromApi(slug: string): Promise<Page | null> {

@@ -144,7 +144,7 @@
       "secondaryButton": { "label": "Apply Now", "href": "{{settings.applyUrl}}" },
       "microcopy": "No commitment. Takes about 2 minutes. We will guide you through each step.",
       "options": [
-        { "title": "Schedule a Campus Tour", "body": "Connect through our admissions team to plan a visit at our Renton campus.", "buttonLabel": "Request Information", "buttonHref": "/request-information" },
+        { "title": "Schedule a Campus Tour", "body": "Connect through our admissions team to plan a visit at our Renton campus.", "buttonLabel": "Submit an inquiry", "buttonHref": "/request-information" },
         { "title": "Start an Application", "body": "Our admissions process is clear, welcoming, and family-centered from the first step.", "buttonLabel": "Apply Now", "buttonHref": "{{settings.applyUrl}}" },
         { "title": "Call Admissions", "body": "Questions about curriculum, tuition, or fit? Reach us directly at the number below.", "buttonLabel": "(206) 723-5526", "buttonHref": "tel:+12067235526" }
       ]

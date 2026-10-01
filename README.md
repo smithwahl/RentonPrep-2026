@@ -99,6 +99,21 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### Use the local Menu API
+
+With the Menu API running at `http://localhost:7210/api`, set these in `.env.local`:
+
+```dotenv
+CMS_MENUS_SOURCE=api
+CMS_MENUS_API_URL=http://localhost:7210/api
+```
+
+Leave `CMS_SOURCE` unset (or empty) to keep pages on local JSON. The server fetches
+`/menu/location/header` and the four `footer-*` locations; no browser CORS setup is
+needed. Restart `npm run dev` after changing environment variables. If your deployed
+Menu API requires a function key, also set `CMS_MENUS_API_KEY` (never `NEXT_PUBLIC_`).
+Setting `CMS_SOURCE=api` later switches pages too and requires `CMS_PAGES_API_URL`.
+
 ---
 
 ## Scripts

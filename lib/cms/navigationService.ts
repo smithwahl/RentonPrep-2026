@@ -6,11 +6,13 @@ function hrefFor(item: RawMenuItem): string {
     case "externalUrl":
       return item.url ?? "#";
     case "anchor": {
+      if (item.url?.startsWith("/") && item.url.includes("#")) return item.url;
       const base = !item.slug || item.slug === "/" ? "/" : `/${item.slug}`;
       return `${base}#${item.anchor}`;
     }
     case "internalPage":
     default: {
+      if (!item.linkType && item.url?.startsWith("/")) return item.url;
       if (!item.slug || item.slug === "/") return "/";
       return `/${item.slug}`;
     }

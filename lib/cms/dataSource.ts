@@ -1,11 +1,9 @@
 /**
  * Data-fetching layer for the CMS. Every function here has a stable signature so
  * swapping the body doesn't touch any caller in navigationService.ts, pageService.ts,
- * or settingsService.ts. Set CMS_SOURCE=api to read from the custom .NET CMS API
- * (lib/cms/apiSource.ts, the RentonPrep.Page repo) instead of the local JSON stand-in
- * below — unset/anything else keeps today's local-JSON behavior unchanged. Settings has
- * no CMS-backed source yet (see apiSource.ts — it doesn't implement it) since no Settings
- * content type exists in the CMS yet.
+ * or settingsService.ts. Set CMS_SOURCE=api for pages and menus, or set
+ * CMS_MENUS_SOURCE=api for menus alone. Unset/anything else keeps the local JSON.
+ * Settings has no CMS-backed source yet since no Settings content type exists in the CMS.
  */
 import { fetchAllSlugsFromApi, fetchNavigationFromApi, fetchPageBySlugFromApi } from "@/lib/cms/apiSource";
 import type { MenuLocation, Page, RawMenuItem, Settings } from "@/lib/cms/types";
@@ -53,7 +51,7 @@ export async function fetchSettings(): Promise<Settings> {
 }
 
 export async function fetchNavigation(location: MenuLocation): Promise<RawMenuItem[]> {
-  if (useApi) return fetchNavigationFromApi(location);
+  if (process.env.CMS_MENUS_SOURCE === "api" || useApi) return fetchNavigationFromApi(location);
   return NAVIGATION_BY_LOCATION[location] ?? [];
 }
 
